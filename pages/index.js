@@ -1,14 +1,46 @@
 import Head from 'next/head';
-import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 
 import { translate } from '../resources/Translations';
-import { Checkbox, Radio, Dropdown } from '../resources/Element';
 import styles from '../styles/Home.module.css';
+
+import { getProductsByTag, getProductsBySize, getProductsByTagSize, getFilterByType, getPromotions, getLocationsByBrand, getLocationsByRegion, getLocationsByBrandRegion } from './api/services';
 
 function Home() {
     const router = useRouter();
+    const [ productsByTag, setProductsByTag ] = useState([]);
+    const [ productsBySize, setProductsBySize ] = useState([]);
+    const [ productsByTagSize, setProductsByTagSize ] = useState([]);
 
+    const [ filters, setFilters ] = useState([]);
+    const [ promotions, setPromotions ] = useState([]);
+    
+    const [ locationsByBrand, setLocationsByBrand ] = useState([]);
+    const [ locationsByRegion, setLocationsByRegion ] = useState([]);
+    const [ locationsByBrandRegion, setLocationsByBrandRegion ] = useState([]);
+
+    useEffect(() => {
+        getProductsByTag('best-selling').then(content => setProductsByTag(content));
+        getProductsBySize('11 cm').then(content => setProductsBySize(content));
+        getProductsByTagSize('chocolate-cake', '15 cm').then(content => setProductsByTagSize(content));
+
+        getFilterByType('size').then(content => setFilters(content));
+        getPromotions('active').then(content => setPromotions(content));
+
+        getLocationsByBrand('tomato-cafe').then(content => setLocationsByBrand(content));
+        getLocationsByRegion('kowloon').then(content => setLocationsByRegion(content));
+        getLocationsByBrandRegion('italian-tomato', 'hk-island').then(content => setLocationsByBrandRegion(content));
+    }, []);
+
+    // console.log(productsByTag);
+    // console.log(productsBySize);
+    // console.log(productsByTagSize);
+    
+    // console.log(locationsByBrand);
+    // console.log(locationsByRegion);
+    // console.log(locationsByBrandRegion);
+    
     return (
         <div className={styles.container}>
             <Head>
