@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown } from 'react-feather';
-import { useMousedownTarget } from '../utilities/customHooks';
+import { useMousedownTarget } from './customHooks';
 
 export const Checkbox = ({ label, checked, onChange }) => (
     <label className='checkbox'>
