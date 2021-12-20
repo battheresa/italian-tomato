@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px 15px;
+}
+
+.logo {
+    width: 320px;
+}
+
+.navigations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigations > h5 {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        padding: 30px 30px 10px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 25px 20px 10px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 18px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+}
