@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 :root {
 	--white: #ffffff;
-	--black: #212121;
+	--black: #1e1d1b;
 
-    --grey001: #f5f5f5; 
-    --grey002: #eeeeee;
-    --grey003: #e0e0e0;
-    --grey004: #bdbdbd;
-    --grey005: #9e9e9e;
-    --grey006: #757575;
-    --grey007: #616161;
-    --grey008: #424242;
+    --grey001: #f6f6f6; 
+    --grey002: #d3d2d0;
+    --grey003: #989898;
 
-	--lightBlue: #4869D9;
-	--darkBlue: #3C56AB;
+	--lightGreen: #F5F4EF;
+	--mediumGreen: #9E8F66;
+	--darkGreen: #5C5321;
+	--red: #D9320D;
+
+	--translucent: rgba(0, 0, 0, 0.02);
     --transparent: rgba(0, 0, 0, 0);
 }
 
@@ -23,9 +23,11 @@
 }
 
 html, body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+
     margin: 0;
     padding: 0;
-	font-family: 'Montserrat', sans-serif;
 }
 
 main, section, footer {
@@ -33,82 +35,166 @@ main, section, footer {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 20px;
 }
 
 /* ---------- text ---------- */
 
-h1, h2, h3, h4, h5, h6, p, button {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 600;
+h1, h2, h3, h4, h5, h6, a, p, button {
 	color: var(--black);
-	margin: 0.5em;
+	margin: 10px;
 }
 
-h1 { font-size: 2.2em; }
-h2 { font-size: 1.8em; }
-h3 { font-size: 1.5em; }
-h4 { font-size: 1.2em; }
-h5 { font-size: 0.9em; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+h4, h5, h6, a, p, button, input { font-family: 'Roboto', sans-serif; }
+
+h1 { 
+	font-size: 2.2em; 
+	font-weight: 700;
+	color: var(--mediumGreen);
+}
+
+h1[mode=hero] { 
+	font-size: 3em; 
+	font-weight: 800;
+	color: var(--black);
+}
+
+h2 { 
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+h3 { 
+	font-size: 1.2em; 
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+
+h3:hover { 
+	cursor: pointer;
+	color: var(--mediumGreen);
+	transition: 0.1s;
+}
+
+h4 { 
+	font-size: 1.1em; 
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	line-height: 2em;
+
+	text-transform: uppercase;
+	position: relative;
+}
+
+h4[deco=underline]::after { 
+	content: '';
+	background-color: var(--black);
+
+	width: 60%;
+	height: 0.15em;
+
+	position: absolute;
+	left: 20%;
+	bottom: 0;
+}
+
+h5 { 
+	font-size: 1em; 
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	padding-bottom: 5px;
+
+	text-transform: uppercase;
+	position: relative;
+}
+
+h5[status=active]::after { 
+	content: '';
+	background-color: var(--black);
+
+	width: 90%;
+	height: 0.12em;
+
+	position: absolute;
+	left: 5%;
+	bottom: 0;
+}
+
+h5[weight=regular] { 
+	font-weight: 400;
+}
+
+h5[weight=regular][status=active]::after { 
+	height: 0.1em;
+}
+
+h5[weight=regular]:hover, h5:hover { 
+	cursor: pointer;
+	color: var(--mediumGreen);
+	transition: 0.1s;
+}
+
+h5[status=active]:hover::after {
+	background-color: var(--mediumGreen);
+	transition: 0.1s;
+}
+
 h6 { 
 	font-weight: 400;
-	font-size: 0.8em;
-	color: var(--grey006);
+	font-size: 0.9em;
+	letter-spacing: 0.01em;
 }
-p { font-weight: 400; }
 
-/* ---------- input ---------- */
+h6:hover {
+	cursor: pointer;
+	color: var(--mediumGreen);
+}
 
-input, input::placeholder {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
+p { 
 	font-size: 1em;
-	color: var(--black);
-	margin: 0.2em;
+	font-weight: 400;
+	letter-spacing: 0.01em; 
+	line-height: 1em;
 }
 
-input {
-	padding: 12px 18px;
-	outline: none;
-	border: 1px solid var(--black);
-	border-radius: 50px;
-}
-
-input::placeholder {
-	color: var(--grey005);
-}
+p[weight=medium] { font-weight: 500; }
+p[weight=bold] { font-weight: 700; }
+p[mode=important] { color: var(--red); }
+p[mode=footer] { color: var(--white); }
+p[mode=footer]:hover { color: var(--black); }
 
 /* ---------- link ---------- */
 
 a, a:link , a:active {
-	color: var(--grey007);
-	text-decoration: none;
-	font-size: 0.9em;
+	font-size: 1em;
 	font-weight: 400;
+	letter-spacing: 0.01em; 
+	line-height: 1em;
 
+	text-decoration: none;
 	position: relative;
-	padding-bottom: 2px;
-	transition: 0.2s;
 }
 
 a:hover {
 	color: var(--black);
+	transition: 0.1s;
 }
 
 a::after {
 	content: '';
-	position: absolute;
-	left: 0;
-	top: 1.3em;
-
-	width: 100%;
-	height: 1px;
-	background-color: var(--grey007);
+	background-color: var(--transparent);
 	transition: 0.2s;
+	
+	width: 90%;
+	height: 0.06em;
+	
+	position: absolute;
+	left: 5%;
+	top: 1.15em;
 }
 
 a:hover::after {
-	height: 0.15em;
+	height: 0.12em;
 	background-color: var(--black);
 }
 
@@ -116,101 +202,47 @@ a:hover::after {
 /* ---------- button ---------- */
 
 button {
-	font-size: 1em;
-	font-weight: 500;
-	padding: 8px 22px;
-	
 	cursor: pointer;
 	outline: none;
 	transition: 0.2s;
 
-	color: var(--black);
+	font-size: 0.9em;
+	font-weight: 500;
+	letter-spacing: 0.05em; 
+	line-height: 1em;
+	text-transform: uppercase;
+	
+	color: var(--white);
+	background-color: var(--mediumGreen);
+
+	padding: 12px 38px;
 	border-radius: 50px;
-	border: 2px solid var(--grey001);
-	background-color: var(--grey001);
+	border: none;
 }
 
 button:hover {
-	border: 2px solid var(--grey002);
-	background-color: var(--grey002);
+	background-color: var(--darkGreen);
 }
 
-button[variant=contained] {
-	opacity: 0.9;
-}
+/* ---------- input ---------- */
 
-button[variant=contained]:hover {
-	opacity: 1;
-}
-
-button[variant=outlined] {
-	transition: 0.5s;
-}
-
-button[variant=contained], button[variant=outlined], button[color=tertiary] {
-	padding: 9px 35px;
-}
-
-button[color=primary] {
-	border: 2px solid var(--white);
-}
-
-button[color=primary][variant=contained] {
+input, input::placeholder {
+	font-size: 1em;
+	font-weight: 400;
 	color: var(--black);
-	background-color: var(--white);
 }
 
-button[color=primary][variant=outlined] {
-	color: var(--white);
-	background-color: var(--transparent);
+input {
+	padding: 12px 15px 10px;
+	outline: none;
+	border: none;
+	border-bottom: 0.1em solid var(--black);
+	background-color: var(--translucent);
 }
 
-button[color=primary][variant=outlined]:hover {
-	color: var(--black);
-	background-color: var(--white);
-}
-
-button[color=secondary] {
-	border: 2px solid var(--black);
-}
-
-button[color=secondary][variant=contained] {
-	color: var(--white);
-	background-color: var(--black);
-}
-
-button[color=secondary][variant=outlined] {
-	color: var(--black);
-	background-color: var(--transparent);
-}
-
-button[color=secondary][variant=outlined]:hover {
-	color: var(--white);
-	background-color: var(--black);
-}
-
-button[color=tertiary] {
-	color: var(--white);
-	border: 2px solid var(--lightBlue);
-	background-color: var(--lightBlue);
-}
-
-button[color=tertiary]:hover {
-	color: var(--white);
-	border: 2px solid var(--darkBlue);
-	background-color: var(--darkBlue);
-}
-
-button[color=quaternary] {
-	color: var(--black);
-	border: 1px solid var(--grey004);
-	background-color: var(--white);
-	padding: 16px 40px;
-}
-
-button[color=quaternary][status=active] {
-	border: 3px solid var(--lightBlue);	
-	padding: 14px 38px;
+input::placeholder {
+	font-style: italic;
+	color: var(--grey003);
 }
 
 /* ---------- checkbox ---------- */
@@ -368,7 +400,7 @@ button[color=quaternary][status=active] {
 
 .dropdown[clickable=off] > .button > span,
 .dropdown[clickable=off] > .button > input::placeholder {
-	color: var(--grey004);
+	color: var(--grey003);
 }
 
 .dropdown > .button {
