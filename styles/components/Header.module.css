@@ -29,11 +29,17 @@
 
 @media screen and (max-width: 1024px) {
     .container {
-        padding: 25px 20px 10px;
+        padding: 25px 20px 15px;
     }
 
     .logo {
         width: 80px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navigations {
+        display: none;
     }
 }
 

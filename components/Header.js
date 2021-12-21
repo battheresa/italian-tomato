@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, ShoppingCart, Globe, Menu, X } from 'react-feather';
 
 import LogoFull from '../public/logo-full.png';
@@ -19,9 +19,11 @@ import Sidebar from './subcomponents/Sidebar';
 function Header() {
     const iconSize = 18;
     const iconSizeLarge = 22;
-
+    
     const { width, height } = useWindowDimensions();
+
     const [ open, setOpen ] = useState(false);
+    const [ menus, setMenus ] = useState([]);
 
     return (
         <div>
@@ -32,21 +34,20 @@ function Header() {
                 </div>
 
                 {/* navigation */}
-                {width >= deviceBreakpoints.tablet ? 
-                    <nav className={styles.navigations}>
-                        <h5>{translate('header.shop')}</h5>
-                        <h5>{translate('header.locations')}</h5>
-                        <h5>{translate('header.brands')}</h5>
-                        <h5>{translate('header.contact')}</h5>
-                        <h5><Search width={iconSize} /></h5>
-                        <h5><ShoppingCart width={iconSize} /></h5>
-                        <h5><Globe width={iconSize} /></h5>
-                    </nav>
-                    :
-                    <nav>
-                        <h5 onClick={() => setOpen(true)}><Menu width={iconSizeLarge} /></h5>
-                    </nav>
-                }
+                <nav className={styles.navigations}>
+                    <h5>{translate('header.shop')}</h5>
+                    <h5>{translate('header.locations')}</h5>
+                    <h5>{translate('header.brands')}</h5>
+                    <h5>{translate('header.contact')}</h5>
+                    <h5><Search width={iconSize} /></h5>
+                    <h5><ShoppingCart width={iconSize} /></h5>
+                    <h5><Globe width={iconSize} /></h5>
+                </nav>
+
+                {/* hamburger menu */}
+                {width < deviceBreakpoints.tablet && <nav>
+                    <h5 onClick={() => setOpen(true)}><Menu width={iconSizeLarge} /></h5>
+                </nav>}
             </header>
 
             {/* screen cover */}
