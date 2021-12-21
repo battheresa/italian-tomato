@@ -1,0 +1,363 @@
+.container {
+    padding: 0;
+    margin: 0;
+}
+
+.hero, .products, .ordering, .membership {
+    padding: 60px 120px;
+    width: 100vw;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    
+    height: 90vh;
+    padding: 40px 80px 50px 120px;
+}
+
+.heroText > h1 {
+    width: 90%;
+    margin-bottom: 25px;
+}
+
+.heroText > p {
+    padding-right: 50px;
+    margin-bottom: 15px;
+}
+
+.heroVisual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+.heroVisual > span {
+    position: absolute;
+}
+
+.heroVisual > span[name=cake] {
+    width: 65%;
+    transform: rotate(-5deg) translate(-10px, 12px);
+}
+
+.heroVisual > span[name=bubble1] {
+    width: 92%;
+    right: 2%;
+}
+
+.heroVisual > span[name=bubble2] {
+    width: 92%;
+}
+
+.products {
+    padding: 50px 20px;
+}
+
+.products > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 80px;
+
+    padding: 40px 0;
+}
+
+.ordering {
+    background-color: var(--lightGreen);
+}
+
+.ordering > div {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    column-gap: 50px;
+
+    padding: 40px 0;
+}
+
+.membership > div {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 50px;
+
+    padding: 40px 0;
+}
+
+.membershipIntro, .membershipCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 28px;
+}
+
+.membershipIntro > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.membershipIntro > div:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+.membershipIntro > div > h2 {
+    text-align: center;
+    width: 80%;
+}
+
+.membershipIntro > div > p, .membershipCard > p {
+    text-align: center;
+    margin: 0;
+}
+
+.membershipButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    width: 60%;
+}
+
+.membershipButton > button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 22px;
+    margin: 5px 5px;
+
+    width: 180px;
+}
+
+.membershipButton > button > span {
+    width: 22px;
+    margin-right: 10px;
+}
+
+.membershipDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+}
+
+.membershipCard {
+    border-radius: 20px;
+    background-color: var(--lightGreen);
+    padding-bottom: 35px;
+}
+
+.membershipCard > p[weight=medium] {
+    margin: 20px 0 2px;
+}
+
+@media screen and (max-width: 1200px) {
+    .heroText > h1 {
+        width: 100%;
+    }
+
+    .heroText > p {
+        padding-right: 20px;
+    }
+
+    .products > div { 
+        column-gap: 40px;
+    }
+
+    .membership {
+        padding: 60px 40px;
+    }
+
+    .membership > div {
+        column-gap: 5px;
+    }
+
+    .membershipIntro > div > h2 {
+        width: 90%;
+    }
+
+    .membershipIntro > div:not(:last-child) {
+        margin-bottom: 25px;
+    }
+
+    .membershipDetails {
+        column-gap: 25px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hero {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 60px;
+    }
+
+    .heroText {
+        align-self: flex-start;
+    }
+
+    .heroText > h1 {
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+    .heroText > p {
+        display: none;
+    }
+
+    .heroVisual > span {
+        bottom: 10%;
+        right: 0;
+    }
+
+    .heroVisual > span[name=cake] {
+        width: 45%;
+        transform: rotate(-5deg) translate(-28%, -10%);
+    }
+
+    .heroVisual > span[name=bubble1] {
+        width: 65%;
+        right: 0;
+    }
+
+    .heroVisual > span[name=bubble2] {
+        width: 65%;
+        right: 2%;
+    }
+
+    .products > div {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 50px;
+        row-gap: 60px;
+    }
+
+    .ordering > div {
+        column-gap: 30px;
+    }
+
+    .membership > div {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0;
+    }
+
+    .membershipIntro {
+        padding: 0 0 30px;
+    }
+
+    .membershipIntro > div > h2, .membershipIntro > div > p {
+        width: 65%;
+    }
+
+    .membershipButton {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 30px;
+    }
+
+    .heroText > h1 {
+        width: 75%;
+    }
+
+    .heroVisual > span {
+        bottom: 10%;
+    }
+
+    .heroVisual > span[name=cake] {
+        width: 50%;
+        transform: rotate(-5deg) translate(-26%, -8%);
+    }
+
+    .heroVisual > span[name=bubble1] {
+        width: 72%;
+        right: 0;
+    }
+
+    .heroVisual > span[name=bubble2] {
+        width: 72%;
+        right: 2%;
+    }
+
+    .products > div {
+        column-gap: 30px;
+        row-gap: 40px;
+    }
+
+    .ordering > div {
+        column-gap: 20px;
+    }
+
+    .membershipDetails {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        row-gap: 30px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .ordering > div {
+        grid-template-columns: repeat(2, 150px);
+        column-gap: 50px;
+        row-gap: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        height: 80vh;
+        padding: 40px 25px;
+    }
+
+    .heroText > h1 {
+        width: 90%;
+    }
+
+    .heroVisual > span {
+        top: 5vh;
+        bottom: 0;
+    }
+
+    .heroVisual > span[name=cake] {
+        width: 65%;
+        transform: rotate(-5deg) translate(-26%, 10%);
+    }
+
+    .heroVisual > span[name=bubble1] {
+        width: 92%;
+        right: 0;
+    }
+
+    .heroVisual > span[name=bubble2] {
+        width: 92%;
+        right: 2%;
+    }
+
+    .products > div {
+        column-gap: 5px;
+        row-gap: 20px;
+    }
+
+    .ordering > div {
+        column-gap: 20px;
+        row-gap: 25px;
+    }
+
+    .membershipIntro > div > h2, .membershipIntro > div > p {
+        width: 100%;
+    }
+
+    .membershipButton {
+        display: flex;
+    }
+}

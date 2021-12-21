@@ -35,7 +35,7 @@ const home = {
     hero_description: 'Italian Tomato preserves the most exquisite craftsmanship mixed with sincerity and passion to present the finest handmade products ever the past three decades. Ready to indulge yourself into pure joyfulness with high-quality ingredients and palatableness.',
     order_now: 'Order Now',
 
-    how_it_works: 'How it Works',
+    ordering: 'How it Works',
     step_title_1: 'Step 1',
     step_description_1: 'Choose a cake from our listing.',
     step_title_2: 'Step 2',
@@ -51,9 +51,34 @@ const home = {
     become_vip_member_title: 'How to become a VIP member?',
     become_vip_member_answer: 'You can become a VIP member by spending HK$1,000 cumulatively with the Tomato Club Mobile App at Italian Tomato within 60 days.',
     points_work_title: 'How does membership points works?',
-    points_work_answer: 'HK$ 1 = 1 Point \n500 Points = HK$ 10',
-    member_offer: '',
-    vip_member_offer: '',
+    points_work_answer: 'HK$ 1 = 1 Point\n500 Points = HK$ 10',
+
+    membership_basic_title: 'Basic Member',
+    basic_offer: `
+        *Welcome Gift\n
+        HK$ 10 Cake Coupon x1\n
+        HK$ 20 Cake Coupon x1\n
+        Free Snack Coupon x1\n
+        Free Soup Coupon x1\n 
+    `,
+    membership_vip_title: 'VIP Member',
+    vip_offer: `
+        *10% off Year-round\n
+        *Welcome Gift\n
+        HK$ 50 Cash coupon x2\n
+        HK$ 20 Cash coupon x2\n
+        *Italian Tomato Restaurants\n
+        15% off Restaurants Coupon x1\n
+        HK$ 50 Restaurant Coupon x2\n
+        Free Upgrade Set x1\n
+        *Italian Tomato Cake\n
+        HK$ 20 Cake Coupon x3\n
+        HK$ 10 Cake Coupon x5\n
+        *Fari-beurre\n
+        Free Bake Cheese Tart Coupon\n
+        20% off on Birthday Cake\n
+        5% off on the 28th of every month
+    `,
 };
 
 const shop = {

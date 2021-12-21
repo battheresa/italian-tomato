@@ -35,7 +35,7 @@ const home = {
     heroDescription: '意大利番茄保留了最精湛的工藝，融合了誠意和熱情，呈現了過去三十年來最好的手工製品。 準備好讓自己沉浸在高品質食材和美味的純粹快樂中。',
     order_now: '現在下單',
 
-    how_it_works: '怎麼運行的',
+    ordering: '怎麼運行的',
     step_title_1: '第 1 步',
     step_description_1: '從我們的列表中選擇一個蛋糕。',
     step_title_2: '第 2 步',
@@ -51,9 +51,38 @@ const home = {
     become_vip_member_title: '如何成為 VIP 會員？',
     become_vip_member_answer: '於60天內於 Italian Tomato 使用 Tomato Club 手機應用程序累計消費 HK$1,000 即可成為 VIP 會員。',
     points_work_title: '會員積分如何運作？',
-    points_work_answer: 'HK$ 1 = 1 點 \n500 點 = HK$ 10',
-    member_offer: '',
-    vip_member_offer: '',
+    points_work_answer: 'HK$ 1 = 1 點\n500 點 = HK$ 10',
+    
+    membership_basic_title: 'Basic Member',
+    basic_offer: `
+        \h
+        Welcome Gift\n
+        HK$ 10 Cake Coupon x1\n
+        HK$ 20 Cake Coupon x1\n
+        Free Snack Coupon x1\n
+        Free Soup Coupon x1\n 
+    `,
+    membership_vip_title: 'VIP Member',
+    vip_offer: `
+        \h
+        Welcome Gift\n
+        HK$ 50 Cash coupon x2\n
+        HK$ 20 Cash coupon x2\n
+        \h
+        Italian Tomato Restaurants\n
+        15% off Restaurants Coupon x1\n
+        HK$ 50 Restaurant Coupon x2\n
+        Free Upgrade Set x1\n
+        \h
+        Italian Tomato Cake\n
+        HK$ 20 Cake Coupon x3\n
+        HK$ 10 Cake Coupon x5\n
+        \h
+        Fari-beurre\n
+        Free Bake Cheese Tart Coupon\n
+        20% off on Birthday Cake\n
+        5% off on the 28th of every month
+    `,
 };
 
 const shop = {
