@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
-import { Search, ShoppingCart, Globe, Menu, X } from 'react-feather';
+import { useState } from 'react';
+import { Search, ShoppingCart, Globe, Menu } from 'react-feather';
 
 import LogoFull from '../public/logo-full.png';
 import LogoCompact from '../public/logo-compact.png';
@@ -20,10 +20,10 @@ function Header() {
     const iconSize = 18;
     const iconSizeLarge = 22;
     
+    const router = useRouter();
     const { width, height } = useWindowDimensions();
-
+    
     const [ open, setOpen ] = useState(false);
-    const [ menus, setMenus ] = useState([]);
 
     return (
         <div>

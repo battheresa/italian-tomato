@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { Facebook, Instagram } from 'react-feather';
 
 import { translate } from '../resources/Translations';
