@@ -8,6 +8,7 @@ import styles from '../styles/Home.module.css';
 import { getProductsByTag } from './api/services';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function Home() {
     const router = useRouter();
@@ -30,9 +31,7 @@ function Home() {
             <main>
             </main>
 
-            <footer className={styles.footer}>
-                &copy; {translate('footer.copyright')}
-            </footer>
+            <Footer />
         </div>
     );
 }

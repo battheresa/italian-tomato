@@ -161,14 +161,13 @@ p {
 	font-size: 1em;
 	font-weight: 400;
 	letter-spacing: 0.01em; 
-	line-height: 1em;
+	line-height: 1.8em;
 }
 
 p[weight=medium] { font-weight: 500; }
 p[weight=bold] { font-weight: 700; }
 p[mode=important] { color: var(--red); }
 p[mode=footer] { color: var(--white); }
-p[mode=footer]:hover { color: var(--black); }
 
 /* ---------- link ---------- */
 
@@ -205,6 +204,18 @@ a:hover::after {
 	background-color: var(--black);
 }
 
+a[deco=none] {
+	padding: 0;
+	margin: 0;
+}
+
+a[deco=none]:hover::after {
+	width: 0;
+	height: 0;
+
+	background-color: none;
+	position: relative;
+}
 
 /* ---------- button ---------- */
 
