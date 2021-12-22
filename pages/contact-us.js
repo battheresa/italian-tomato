@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { useIntl } from 'react-intl';
 import { useState, useEffect } from 'react';
 import { Phone, Mail, Clock } from 'react-feather';
 
@@ -17,6 +18,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 function Contact() {
+    const intl = useIntl();
+
     const iconSize = 18;
     const { width, height } = useWindowDimensions();
     const [ sidebar, setSidebar ] = useState(false);
@@ -28,6 +31,15 @@ function Contact() {
     useEffect(() => {
         getContactInfo().then(content => setContacts(content));
     }, []);
+
+    const formatOpening = (index, value) => {
+        const section = value.split('-');
+        
+        if (index === 0) 
+            return section[0] + ' – ' + section[1];
+        else 
+            return section[0].slice(0, 2) + ':' + section[0].slice(2, section[0].length) + ' – ' + section[1].slice(0, 2) + ':' + section[1].slice(2, section[0].length);
+    };
 
     return (
         <div style={{ height: `${height}px`, width: '100vw', overflow: sidebar ? 'hidden' : 'visible' }}>
@@ -59,7 +71,15 @@ function Contact() {
                             </div>
                             <div className={styles.info}>
                                 <p><Clock width={iconSize} /></p>
-                                <p>{ordering?.open.map((item, i) => (<span key={i}>{item}</span>))}</p>
+                                <p>{intl.locale === 'en' ? 
+                                    ordering?.open.map((item, i) => (
+                                        <span key={i}>{formatOpening(i, item)}</span>
+                                    )) 
+                                    : 
+                                    ordering?.open_zh.map((item, i) => (
+                                        <span key={i}>{item}</span>
+                                    ))}
+                                </p>
                             </div>
                         </div>
                         <div>
@@ -74,7 +94,15 @@ function Contact() {
                             </div>
                             <div className={styles.info}>
                                 <p><Clock width={iconSize} /></p>
-                                <p>{customer?.open.map((item, i) => (<span key={i}>{item}</span>))}</p>
+                                <p>{intl.locale === 'en' ? 
+                                    customer?.open.map((item, i) => (
+                                        <span key={i}>{formatOpening(i, item)}</span>
+                                    )) 
+                                    : 
+                                    customer?.open_zh.map((item, i) => (
+                                        <span key={i}>{item}</span>
+                                    ))}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -92,7 +120,7 @@ function Contact() {
 
             <Footer />
         </div>
-    )
+    );
 }
 
 export default Contact;

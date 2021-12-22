@@ -5,8 +5,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    
-    position: relative;
 }
 
 .content {
@@ -67,10 +65,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .content {
-        padding: 60px 60px 20px;
-    }
-
     .content > div:not(:last-child) {
         grid-template-columns: 1fr;
         row-gap: 30px;

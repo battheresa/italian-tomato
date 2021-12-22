@@ -26,7 +26,7 @@ function Sidebar({ open, setOpen }) {
     };
 
     return (
-        <div className={styles.container} style={{ right: open ? '0' : '-420px' }}>
+        <div className={styles.container} style={{ right: open ? '0' : '-520px' }}>
             <div>
                 <h5 onClick={() => setOpenSubmenu(false)} style={{ visibility: openSubmenu ? 'visible' : 'hidden', opacity: openSubmenu ? '1' : '0' }}>
                     <ArrowLeft width={iconSizeLarge} />

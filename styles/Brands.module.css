@@ -1,0 +1,136 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    width: 100vw;
+    margin-bottom: 20px;
+}
+
+.container > h1 {
+    padding: 60px 120px 0;
+}
+
+.container > section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    padding: 100px 120px;
+}
+
+.container > section > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin: auto;
+    width: fit-content;
+}
+
+.container > section > div > p {
+    width: 75%;
+}
+
+.greenBackground {
+    background-color: var(--lightGreen);
+}
+
+.cover {
+    width: 380px;
+    height: 250px;
+    border-radius: 20px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.cover::after {
+    content: '';
+    
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    opacity: 0;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: 0.5s;
+}
+
+.cover[hover=true]::after {
+    opacity: 1;
+}
+
+.container > section > div[name=imageBefore], .container > section > div[name=imageAfter] {
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    width: 210px;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 1200px) {
+    .container > h1 {
+        padding: 60px 80px 0;
+    }
+
+    .container > section {
+        padding: 100px 80px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container > h1 {
+        padding: 60px 40px 0;
+    }
+
+    .container > section {
+        padding: 40px;
+        column-gap: 40px;
+    }
+
+    .container > section > div > p {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container > section {
+        grid-template-columns: 1fr;
+    }
+
+    .container > section > div > p {
+        width: 72%;
+    }
+
+    .container > section > div[name=imageBefore] {
+        margin-bottom: 20px;
+    }
+
+    .container > section > div[name=imageAfter] {
+        margin-top: 20px;
+    }
+
+    .cover {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container > h1 {
+        padding: 20px 35px 0;
+    }
+    
+    .container > section > div > p {
+        width: 100%;
+    }
+}
