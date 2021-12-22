@@ -12,7 +12,7 @@ import styles from '../styles/components/Header.module.css';
 import { deviceBreakpoints } from './utilities/config';
 import { useWindowDimensions } from './utilities/customHooks';
 
-import Sidebar from './subcomponents/Sidebar';
+import Sidebar from './Sidebar';
 
 // TODO: routing
 

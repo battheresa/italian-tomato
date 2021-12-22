@@ -1,7 +1,7 @@
 import { Monitor, Calendar, CreditCard, ShoppingBag } from 'react-feather';
 
-import { translate } from '../../resources/Translations';
-import styles from '../../styles/components/subcomponents/StepCard.module.css';
+import { translate } from '../resources/Translations';
+import styles from '../styles/components/StepCard.module.css';
 
 function StepCard({ stepNumber }) {
     const iconSize = 52;

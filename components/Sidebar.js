@@ -1,17 +1,18 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { Search, ShoppingCart, Globe, ArrowLeft, X } from 'react-feather';
 
-import { translate } from '../../resources/Translations';
-import styles from '../../styles/components/subcomponents/Sidebar.module.css';
+import { translate } from '../resources/Translations';
+import styles from '../styles/components/Sidebar.module.css';
 
 // TODO: routing
 
 function Sidebar({ open, setOpen }) {
     const iconSize = 18;
     const iconSizeLarge = 22;
-
+    
+    const router = useRouter();
+    
     const [ submenu, setSubmenu ] = useState(0);
     const [ openSubmenu, setOpenSubmenu ] = useState(false);
     

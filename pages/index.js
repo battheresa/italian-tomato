@@ -18,17 +18,16 @@ import { useWindowOffset } from '../components/utilities/customHooks';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import ProductCard from '../components/subcomponents/ProductCard';
-import StepCard from '../components/subcomponents/StepCard';
+import ProductCard from '../components/ProductCard';
+import StepCard from '../components/StepCard';
 
 // TODO: routing
+// TODO: add amination
 
 function Home() {
     const router = useRouter();
     const { offsetX, offsetY } = useWindowOffset();
     const [ products, setProducts ] = useState([]);
-
-    console.log(offsetY);
     
     useEffect(() => {
         getProductsByTag('best-selling').then(content => setProducts(content));
