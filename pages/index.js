@@ -5,9 +5,9 @@ import { useState, useEffect } from 'react';
 
 import AppleStore from '../public/apple-store-icon.png';
 import GooglePlay from '../public/google-play-icon.png';
-import Cake from '../public/home/gateau-aux-fraises.png';
-import BubbleMedium from '../public/home/bubble-medium-green.png';
-import BubbleLight from '../public/home/bubble-light-green.png';
+import Cake from '../public/decorations/gateau-aux-fraises.png';
+import BubbleMedium from '../public/decorations/bubble-medium-green.png';
+import BubbleLight from '../public/decorations/bubble-light-green.png';
 
 import { translate } from '../resources/Translations';
 import styles from '../styles/Home.module.css';
@@ -22,7 +22,7 @@ import ProductCard from '../components/ProductCard';
 import StepCard from '../components/StepCard';
 
 // TODO: routing
-// TODO: add amination
+// TODO: amination
 
 function Home() {
     const router = useRouter();

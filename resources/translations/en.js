@@ -185,8 +185,8 @@ export const en = {
     '/shop': shop,
     '/product': product,
     '/checkout': checkout,
-    '/our_brands': brands,
+    '/our-brands': brands,
     '/locations': locations,
-    '/contact_us': contact,
+    '/contact-us': contact,
     '/dummy': dummy,
 };

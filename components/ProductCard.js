@@ -2,10 +2,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import Loading from '../public/dummy/product-loading.png';
-
 import styles from '../styles/components/ProductCard.module.css';
-
-import { random } from './utilities/customFunctions';
 
 // TODO: routing
 
@@ -20,7 +17,7 @@ function ProductCard({ product }) {
 
     const router = useRouter();
     
-    const size = product?.sizes[random(0, product?.sizes.length)];
+    const size = product?.sizes[0];
     const image = product?.images.find(item => item.includes(size.replace(' ', '')));
     const price = product?.prices.find(item => item.size === size);
 

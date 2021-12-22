@@ -31,8 +31,8 @@ const common = {
 const home = {
     ...common,
 
-    heroTitle: '蛋糕讓你的生活充滿樂趣',
-    heroDescription: '意大利番茄保留了最精湛的工藝，融合了誠意和熱情，呈現了過去三十年來最好的手工製品。 準備好讓自己沉浸在高品質食材和美味的純粹快樂中。',
+    hero_title: '蛋糕讓你的生活充滿樂趣',
+    hero_description: '意大利番茄保留了最精湛的工藝，融合了誠意和熱情，呈現了過去三十年來最好的手工製品。 準備好讓自己沉浸在高品質食材和美味的純粹快樂中。',
     order_now: '現在下單',
 
     ordering: '怎麼運行的',
@@ -55,8 +55,7 @@ const home = {
     
     membership_basic_title: 'Basic Member',
     basic_offer: `
-        \h
-        Welcome Gift\n
+        *Welcome Gift\n
         HK$ 10 Cake Coupon x1\n
         HK$ 20 Cake Coupon x1\n
         Free Snack Coupon x1\n
@@ -64,21 +63,17 @@ const home = {
     `,
     membership_vip_title: 'VIP Member',
     vip_offer: `
-        \h
-        Welcome Gift\n
+        *Welcome Gift\n
         HK$ 50 Cash coupon x2\n
         HK$ 20 Cash coupon x2\n
-        \h
-        Italian Tomato Restaurants\n
+        *Italian Tomato Restaurants\n
         15% off Restaurants Coupon x1\n
         HK$ 50 Restaurant Coupon x2\n
         Free Upgrade Set x1\n
-        \h
-        Italian Tomato Cake\n
+        *Italian Tomato Cake\n
         HK$ 20 Cake Coupon x3\n
         HK$ 10 Cake Coupon x5\n
-        \h
-        Fari-beurre\n
+        *Fari-beurre\n
         Free Bake Cheese Tart Coupon\n
         20% off on Birthday Cake\n
         5% off on the 28th of every month
@@ -189,8 +184,8 @@ export const zh = {
     '/shop': shop,
     '/prouct': product,
     '/checkout': checkout,
-    '/our_brands': brands,
+    '/our-brands': brands,
     '/locations': locations,
-    '/contact_us': contact,
+    '/contact-us': contact,
     '/dummy': dummy,
 };
