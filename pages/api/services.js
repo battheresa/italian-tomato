@@ -1,4 +1,4 @@
-import { getIngredient, getCakes, getFilters, getPromos, getLocations } from './database';
+import { getIngredient, getCakes, getFilters, getPromos, getLocations, getContact } from './database';
 import { getImage, getImages } from './storage';
 
 export const getProducts = async () => {
@@ -72,4 +72,8 @@ export const getLocationsByRegion = async (region) => {
 export const getLocationsByBrandRegion = async (brand, region) => {
     const allLocations = await getLocations();
     return allLocations.filter(item => item.id.includes(brand) && item.region === region);
+};
+
+export const getContactInfo = async () => {
+    return await getContact()
 };

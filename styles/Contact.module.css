@@ -1,0 +1,96 @@
+.container {
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+    position: relative;
+}
+
+.content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 60px 120px 20px;
+}
+
+.content > div:not(:last-child) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 120px;
+
+    margin-top: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;   
+}
+
+.info > p {
+    margin: 8px 5px;
+}
+
+.info > p > span {
+    display: block;
+}
+
+.notice {
+    display: flex;
+    margin-top: 30px;
+}
+
+.notice > p {
+    margin: 10px 5px;
+}
+
+.waves > span {
+    position: relative;
+    bottom: -5px;
+    z-index: -1;
+}
+
+@media screen and (max-width: 1024px) { 
+    .content {
+        padding: 60px 60px 20px;
+    }
+
+    .content > div:not(:last-child) {
+        column-gap: 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 60px 60px 20px;
+    }
+
+    .content > div:not(:last-child) {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+
+    .info > p {
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        padding: 20px 35px 20px;
+    }
+
+    .content > div:not(:last-child) {
+        row-gap: 15px;
+    }
+
+    .notice {
+        margin-top: 20px;
+    }
+}

@@ -149,6 +149,8 @@ const checkout = {
 const brands = {
     ...common,
 
+    page_title: 'We are a family',
+
     italian_tomato: 'The feeling of love and sweetness in every single cake transmitted from the chef’s hands and devotion permeates your palate. Sourcing the finest ingredients over the world with the secret receipt makes the Italian Tomato desserts the most “Eyebrow raising” menu. Do not miss out on the American Supersized version!',
     tomato_cafe: 'Italian Tomato Café is proud to feature the great Italian pasta, pizza and a choice of entrée, ciabatta and doria, with the authentic Italian dining experience. Delighting the gourmet taste bud with a simple pleasure, our chefs are obsessed with making every unique culinary creation from the finest ingredients, Italian Tomato also serves blended coffee and homemade desserts.',
     cafe_grill: 'Decor with stylish photo flame wall and wooden furniture. We offer diners a casual dining spot set in designed surroundings. We offer fresh pasta with a tender and silky-smooth texture, which is so more al dente than dried pasta. Well-selected quality ingredients all around the world, creating secret sauces that bring the taste of authentic Italian alive.',
@@ -159,6 +161,8 @@ const brands = {
 const locations = {
     ...common,
 
+    page_title: 'Find your nearest shop',
+
     kowloon: 'Kowloon',
     new_territories: 'New Territories',
     hk_island: 'Hong Kong Island',
@@ -166,6 +170,8 @@ const locations = {
 
 const contact = {
     ...common,
+
+    page_title: 'Talk to us',
 
     ordering_title: 'Online Ordering Hotline',
     ordering_note: 'For enquiries only',

@@ -51,3 +51,14 @@ export const getLocations = async () => {
 
     return locations;
 };
+
+export const getContact = async () => {
+    let contacts = [];
+    const response = await getDocs(collection(firestore, 'contact'));
+    
+    response.forEach((item) => {
+        contacts.push({ id: item.id, ...item.data() });
+    });
+
+    return contacts;
+};
