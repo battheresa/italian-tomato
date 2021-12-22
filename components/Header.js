@@ -16,15 +16,13 @@ import Sidebar from './Sidebar';
 
 // TODO: routing
 
-function Header() {
+function Header({ open, setOpen }) {
     const iconSize = 18;
     const iconSizeLarge = 22;
     
     const router = useRouter();
     const { width, height } = useWindowDimensions();
     
-    const [ open, setOpen ] = useState(false);
-
     return (
         <div>
             <header className={styles.container}>
@@ -51,7 +49,7 @@ function Header() {
             </header>
 
             {/* screen cover */}
-            <div className='screenCover' onClick={() => setOpen(false)} style={{ opacity: open ? '1' : '0', zIndex: open ? '0' : '-1' }} />
+            <div className='screenCover' onClick={() => setOpen(false)} style={{ height: `${height}px`, opacity: open ? '1' : '0', zIndex: open ? '1' : '-1' }} />
 
             {/* sidebar */}
             <Sidebar open={open} setOpen={setOpen} />
