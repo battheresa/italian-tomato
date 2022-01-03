@@ -25,7 +25,8 @@ export const Dropdown = ({ content, value, placeholder, searchable=true, disable
     const [ list, setList ] = useState([ ...content ]);
 
     useEffect(() => {
-        setList(content.filter(item => item.label.toLowerCase().includes(keyword.toLowerCase())));
+        if (searchable)
+            setList(content.filter(item => item.label.toLowerCase().includes(keyword.toLowerCase())));
     }, [keyword]);
 
     useEffect(() => {
@@ -48,7 +49,7 @@ export const Dropdown = ({ content, value, placeholder, searchable=true, disable
     return (
         <div className='dropdown' clickable={disabled ? 'off' : ''}>
             <div className='button' onClick={() => disabled ? undefined : toggleOption(!open)}>
-                <input type='text' value={keyword} placeholder={placeholder} readOnly={!searchable} onChange={(e) => setKeyword(e.target.value)} />
+                <input type='text' value={value.label || keyword} placeholder={placeholder} readOnly={!searchable} onChange={(e) => setKeyword(e.target.value)} />
                 <span><ChevronDown /></span>
             </div>
             <div className='option' status={open ? '' : 'close'}>

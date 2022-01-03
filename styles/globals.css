@@ -426,6 +426,7 @@ input::placeholder {
 	cursor: pointer;
 	position: relative;
 	margin: 5px 10px;
+	width: 100%;
 }
 
 .dropdown[clickable=off], 
@@ -437,7 +438,7 @@ input::placeholder {
 
 .dropdown[clickable=off] > .button > span,
 .dropdown[clickable=off] > .button > input::placeholder {
-	color: var(--grey003);
+	color: var(--mediumGreen);
 }
 
 .dropdown > .button {
@@ -449,7 +450,7 @@ input::placeholder {
 	margin-bottom: 5px;
 	padding-right: 10px;
 	border-radius: 50px;
-	background-color: var(--grey001);
+	background-color: var(--lightGreen);
 }
 
 .dropdown > .button > input {
@@ -477,7 +478,7 @@ input::placeholder {
 
 	padding: 8px 0;
 	border-radius: 15px;
-	background-color: var(--grey001);
+	background-color: var(--lightGreen);
 	transition: 0.2s;
 }
 
@@ -493,7 +494,7 @@ input::placeholder {
 }
 
 .dropdown > .option > p:hover {
-	background-color: var(--grey002);
+	background-color: rgba(158, 143, 102, 0.2);
 }
 
 /* ---------- others ---------- */

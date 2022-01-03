@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    transform: 0.2s;
+}
+
+.modal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+
+    width: 80%;
+    max-width: 1000px;
+    
+    position: absolute;
+    z-index: 1;
+    
+    padding: 40px;
+    background-color: var(--white);
+
+    border-radius: 20px;
+    box-shadow: var(--shadow) 0 0 6px;
+}
+
+.map {
+    width: 500px;
+    height: 500px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.map > div:first-child, .content > div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.header > p {
+    margin-bottom: 30px;
+}
+
+.information > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 15px 8px;
+}
+
+.information > div > p {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .map {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .modal {
+        grid-template-columns: 1fr;
+    }
+
+    .map {
+        width: 100%;
+        height: 300px;
+    }
+
+    .content {
+        margin-top: 50px;
+    }
+
+    .content > div:first-child {
+        margin: 0;
+    }
+
+    .information > div {
+        margin: 10px 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content > div:first-child {
+        flex-direction: column;
+    }
+
+    .header > p {
+        margin-bottom: 15px;
+    }
+
+    .information > div {
+        margin: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal {
+        width: 100%;
+        height: 100%;
+
+        padding: 25px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}

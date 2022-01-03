@@ -13,6 +13,7 @@ import styles from '../styles/Contact.module.css';
 import { getContactInfo } from './api/services';
 import { deviceBreakpoints } from '../components/utilities/config';
 import { useWindowDimensions } from '../components/utilities/customHooks';
+import { formatOpening } from '../components/utilities/customFunctions';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -31,15 +32,6 @@ function Contact() {
     useEffect(() => {
         getContactInfo().then(content => setContacts(content));
     }, []);
-
-    const formatOpening = (index, value) => {
-        const section = value.split('-');
-        
-        if (index === 0) 
-            return section[0] + ' – ' + section[1];
-        else 
-            return section[0].slice(0, 2) + ':' + section[0].slice(2, section[0].length) + ' – ' + section[1].slice(0, 2) + ':' + section[1].slice(2, section[0].length);
-    };
 
     return (
         <div style={{ height: `${height}px`, width: '100vw', overflow: sidebar ? 'hidden' : 'visible' }}>
