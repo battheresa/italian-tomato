@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    transition: 0.5s;
 }
 
 .container > div:first-child {
@@ -35,7 +36,6 @@
 
 .container:hover {
     transform: translateY(-8px);
-    transition: 0.5s;
 }
 
 @media screen and (max-width: 480px) {

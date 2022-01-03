@@ -10,7 +10,7 @@ import CafeGrillLogo from '../public/brands/cafe-grill.png';
 import CafeGrillCover from '../public/brands/cafe-grill-cover.png';
 import FariBeurreLogo from '../public/brands/fari-beurre.png';
 import FariBeurreCover from '../public/brands/fari-beurre-cover.png';
-import WasabouLogo from '../public/brands/wasabou-2.png';
+import WasabouLogo from '../public/brands/wasabou.png';
 import WasabouCover from '../public/brands/wasabou-cover.png';
 
 import { translate } from '../resources/Translations';
@@ -58,7 +58,7 @@ function Brands() {
                             <Image src={ItalianTomatoCover} alt='italian-tomato-cover' />
                         </div>
                         <div className={styles.logo} style={{ opacity: hover[0] ? '1' : '0', width: '170px' }}>
-                            <Image src={ItalianTomatoLogo} alt='italian-tomato-logo' />
+                            <Image src={ItalianTomatoLogo} alt='italian-tomato' />
                         </div>
                     </div>
                 </section>
@@ -69,7 +69,7 @@ function Brands() {
                             <Image src={TomatoCafeCover} alt='italian-tomato-cafe-cover' />
                         </div>
                         <div className={styles.logo} style={{ opacity: hover[1] ? '1' : '0' }}>
-                            <Image src={TomatoCafeLogo} alt='italian-tomato-cafe-logo' />
+                            <Image src={TomatoCafeLogo} alt='italian-tomato-cafe' />
                         </div>
                     </div>
                     <div>
@@ -88,7 +88,7 @@ function Brands() {
                             <Image src={CafeGrillCover} alt='cafe-grill-italian-tomato-cover' />
                         </div>
                         <div className={styles.logo} style={{ opacity: hover[2] ? '1' : '0', width: '260px' }}>
-                            <Image src={CafeGrillLogo} alt='cafe-grill-italian-tomato-logo' />
+                            <Image src={CafeGrillLogo} alt='cafe-grill-italian-tomato' />
                         </div>
                     </div>
                 </section>
@@ -99,7 +99,7 @@ function Brands() {
                             <Image src={FariBeurreCover} alt='fari-beurre-cover' />
                         </div>
                         <div className={styles.logo} style={{ opacity: hover[3] ? '1' : '0' }}>
-                            <Image src={FariBeurreLogo} alt='fari-beurre-logo' />
+                            <Image src={FariBeurreLogo} alt='fari-beurre' />
                         </div>
                     </div>
                     <div>
@@ -118,7 +118,7 @@ function Brands() {
                             <Image src={WasabouCover} alt='wasabou-kamakur-yumemiya-cover' />
                         </div>
                         <div className={styles.logo} style={{ opacity: hover[4] ? '1' : '0' }}>
-                            <Image src={WasabouLogo} alt='wasabou-kamakur-yumemiya-logo' />
+                            <Image src={WasabouLogo} alt='wasabou-kamakur-yumemiya' />
                         </div>
                     </div>
                 </section>

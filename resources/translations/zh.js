@@ -161,6 +161,7 @@ const locations = {
     ...common,
 
     page_title: '尋找離您最近的商店',
+    none: '沒有任何',
 
     kowloon: '九龍',
     new_territories: '新界及離島',

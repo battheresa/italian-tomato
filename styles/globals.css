@@ -29,6 +29,8 @@ html, body {
 
     margin: 0;
     padding: 0;
+
+	overflow-x: hidden;
 }
 
 main, section, footer {
@@ -173,6 +175,7 @@ p {
 p[weight=medium] { font-weight: 500; }
 p[weight=bold] { font-weight: 700; }
 p[mode=important] { color: var(--red); }
+p[mode=faded] { color: var(--grey003); }
 p[mode=footer] { color: var(--white); }
 
 /* ---------- link ---------- */

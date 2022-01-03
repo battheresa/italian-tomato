@@ -162,6 +162,7 @@ const locations = {
     ...common,
 
     page_title: 'Find your nearest shop',
+    none: 'None',
 
     kowloon: 'Kowloon',
     new_territories: 'New Territories',
