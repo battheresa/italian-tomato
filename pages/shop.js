@@ -14,6 +14,7 @@ import Footer from '../components/Footer';
 import { Checkbox, Dropdown } from '../components/utilities/element';
 import PromoCarousel from '../components/PromoCarousel';
 import ProductCard from '../components/ProductCard';
+import BestSelling from '../components/BestSelling';
 
 function Shop() {
     const { width, height } = useWindowDimensions();
@@ -94,23 +95,14 @@ function Shop() {
 
             <main className={styles.container}>
                 {/* promotions */}
-                <div className={styles.carousel}>
+                <section className={styles.carousel}>
                     <PromoCarousel promotions={promotions} />
-                </div>
+                </section>
 
                 {/* best selling */}
-                <div className={styles.popular}>
-                    <h4 deco='underline'>{translate('best_selling')}</h4>
+                <BestSelling />
 
-                    <div>
-                        <ProductCard product={popular[0]} />
-                        <ProductCard product={popular[1]} />
-                        <ProductCard product={popular[2]} />
-                        <ProductCard product={popular[3]} />
-                    </div>
-                </div>
-
-                <div className={styles.shop}>
+                <section className={styles.shop}>
                     {/* cake type */}
                     {width >= deviceBreakpoints.tablet && <div>
                         <h5 onClick={() => setMenu(menuList[0])} status={menu.value === 0 ? 'active' : ''}>{translate('all')}</h5>
@@ -147,7 +139,7 @@ function Shop() {
                             <ProductCard key={item?.id || i} product={item} />
                         ))}
                     </div>
-                </div>
+                </section>
             </main>
 
             <Footer />

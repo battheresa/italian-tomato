@@ -55,18 +55,6 @@
     width: 92%;
 }
 
-.products {
-    padding: 50px 20px;
-}
-
-.products > div {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 100px;
-
-    padding: 40px 280px;
-}
-
 .ordering {
     background-color: var(--lightGreen);
 }
@@ -157,13 +145,6 @@
     margin: 20px 0 2px;
 }
 
-@media screen and (max-width: 1520px) {
-    .products > div { 
-        column-gap: 80px;
-        padding: 40px 120px;
-    }
-}
-
 @media screen and (max-width: 1200px) {
     .heroText > h1 {
         width: 100%;
@@ -171,11 +152,6 @@
 
     .heroText > p {
         padding-right: 20px;
-    }
-
-    .products > div { 
-        column-gap: 40px;
-        padding: 40px 80px;
     }
 
     .membership {
@@ -239,13 +215,6 @@
         right: 2%;
     }
 
-    .products > div {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 50px;
-        row-gap: 60px;
-        padding: 40px 120px;
-    }
-
     .ordering > div {
         column-gap: 30px;
     }
@@ -298,11 +267,6 @@
         right: 2%;
     }
 
-    .products > div {
-        column-gap: 30px;
-        row-gap: 40px;
-    }
-
     .ordering > div {
         column-gap: 20px;
     }
@@ -315,10 +279,6 @@
 }
 
 @media screen and (max-width: 680px) {
-    .products > div {
-        padding: 30px 60px;
-    }
-
     .ordering > div {
         grid-template-columns: repeat(2, 150px);
         column-gap: 50px;
@@ -354,12 +314,6 @@
     .heroVisual > span[name=bubble2] {
         width: 92%;
         right: 2%;
-    }
-
-    .products > div {
-        column-gap: 40px;
-        row-gap: 20px;
-        padding: 30px 15px;
     }
 
     .ordering > div {

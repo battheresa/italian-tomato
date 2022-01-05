@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 import { Search, ShoppingCart, Globe, Menu } from 'react-feather';
 
 import LogoFull from '../public/logo-full.png';
@@ -13,6 +12,10 @@ import { deviceBreakpoints } from './utilities/config';
 import { useWindowDimensions } from './utilities/customHooks';
 
 import Sidebar from './Sidebar';
+
+// TODO: search menu
+// TODO: language menu
+// TODO: shopping cart menu
 
 function Header({ open, setOpen }) {
     const iconSize = 18;

@@ -1,0 +1,146 @@
+.container {
+    width: 100vw;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 120px;
+    
+    padding: 60px 12% 60px 10%;
+    border-bottom: 1px solid var(--grey001);
+}
+
+.image {
+    overflow: hidden;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details {
+    align-self: flex-start;
+}
+
+.details > span {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.details > span[name=size] > div {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.details > span[name=size] > div > label {
+    margin-right: 25px;
+}
+
+.details > span[name=quantity] > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.details > span[name=quantity] > div > span {
+    cursor: pointer;
+    margin: 10px;
+}
+
+.details > span[name=quantity] > div > input {
+    width: 50px;
+    height: 38px;
+    margin: 3px 0 7px;
+    text-align: center;
+}
+
+.details > span[name=message] > p {
+    width: 280px;
+}
+
+.details > span[name=message] > input {
+    height: 38px;
+    margin: 3px 0 7px;
+}
+
+.details > button {
+    width: 220px;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 1520px) {
+    .product { 
+        padding: 60px 120px;
+        column-gap: 60px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .product { 
+        padding: 100px 80px;
+    }
+
+    .details > span[name=message] {
+        flex-direction: column;
+    }
+
+    .details > span[name=message] > input {
+        margin: 3px 10px 7px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .product {
+        padding: 40px;
+        column-gap: 30px;
+    }
+
+}
+
+@media screen and (max-width: 860px) {
+    .details > span {
+        flex-direction: column;
+    }
+
+    .product {
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+    }
+
+    .image {
+        width: 70%;
+        margin: auto;
+    }   
+
+    .details > span {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .product {
+        padding: 25px 25px 60px;
+        column-gap: 30px;
+        row-gap: 15px;
+    }
+
+    .details > span[name=size] {
+        flex-direction: column;
+    }
+
+    .details > button {
+        width: 100%;
+    }
+}

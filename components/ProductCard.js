@@ -5,8 +5,6 @@ import { useIntl } from 'react-intl';
 import Loading from '../public/dummy/product-loading.png';
 import styles from '../styles/components/ProductCard.module.css';
 
-// TODO: routing
-
 function ProductCard({ product }) {
     if (!product) {
         return (
@@ -24,7 +22,7 @@ function ProductCard({ product }) {
     const price = product?.prices.find(item => item.size === size);
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} onClick={() => router.push(`/product/${product.id}`)}>
             <img src={image} alt={product?.id} />
             <h3>{intl.locale === 'en' ? product?.name : product?.name_zh}</h3>
             <h6>HK$ {price.price}</h6>

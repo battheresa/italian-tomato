@@ -192,7 +192,7 @@ const dummy = {
 export const zh = {
     '/': home,
     '/shop': shop,
-    '/prouct': product,
+    '/product': product,
     '/checkout': checkout,
     '/our-brands': brands,
     '/locations': locations,

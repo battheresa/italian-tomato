@@ -18,7 +18,7 @@ import { useWindowDimensions, useWindowOffset } from '../components/utilities/cu
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import ProductCard from '../components/ProductCard';
+import BestSelling from '../components/BestSelling';
 import StepCard from '../components/StepCard';
 
 // TODO: amination
@@ -68,16 +68,7 @@ function Home() {
                 </section>
 
                 {/* best selling */}
-                <section className={styles.products}>
-                    <h4 deco='underline'>{translate('best_selling')}</h4>
-
-                    <div>
-                        <ProductCard product={products[0]} />
-                        <ProductCard product={products[1]} />
-                        <ProductCard product={products[2]} />
-                        <ProductCard product={products[3]} />
-                    </div>
-                </section>
+                <BestSelling />
 
                 {/* how to order */}
                 <section className={styles.ordering}>

@@ -27,9 +27,30 @@ export const getProducts = async () => {
     return products;
 };
 
+let storedIds;
+export const getProductIds = async () => {
+    if (storedIds)
+        return storedIds;
+
+    let ids = [];
+    const data = await getCakes();
+
+    data.forEach((item) => {
+        ids.push({ id: item.id });
+    });
+
+    storedIds = ids;
+    return ids;
+};
+
 export const getProductsByTag = async (tag) => {
     const allProducts = await getProducts();
     return allProducts.filter(item => item.tags.includes(tag));
+};
+
+export const getProductById = async (id) => {
+    const allProducts = await getProducts();
+    return allProducts.find(item => item.id === id);
 };
 
 let storedPromotions;

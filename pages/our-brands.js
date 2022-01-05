@@ -22,7 +22,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 // TODO: download menu
-// TODO: redirect to search locations
 
 function Brands() {
     const { width, height } = useWindowDimensions();
