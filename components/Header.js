@@ -14,8 +14,6 @@ import { useWindowDimensions } from './utilities/customHooks';
 
 import Sidebar from './Sidebar';
 
-// TODO: routing
-
 function Header({ open, setOpen }) {
     const iconSize = 18;
     const iconSizeLarge = 22;
@@ -27,16 +25,16 @@ function Header({ open, setOpen }) {
         <div>
             <header className={styles.container}>
                 {/* logo */}
-                <div className={styles.logo}>
+                <div className={styles.logo} onClick={() => router.push('/')}>
                     <Image src={width >= deviceBreakpoints.laptops ? LogoFull : LogoCompact} alt='italian-tomato-logo' />
                 </div>
 
                 {/* navigation */}
                 <nav className={styles.navigations}>
-                    <h5>{translate('header.shop')}</h5>
-                    <h5>{translate('header.locations')}</h5>
-                    <h5>{translate('header.brands')}</h5>
-                    <h5>{translate('header.contact')}</h5>
+                    <h5 onClick={() => router.push('/shop')}>{translate('header.shop')}</h5>
+                    <h5 onClick={() => router.push('/locations')}>{translate('header.locations')}</h5>
+                    <h5 onClick={() => router.push('/our-brands')}>{translate('header.brands')}</h5>
+                    <h5 onClick={() => router.push('/contact-us')}>{translate('header.contact')}</h5>
                     <h5><Search width={iconSize} /></h5>
                     <h5><ShoppingCart width={iconSize} /></h5>
                     <h5><Globe width={iconSize} /></h5>

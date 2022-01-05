@@ -5,8 +5,6 @@ import { Search, ShoppingCart, Globe, ArrowLeft, X } from 'react-feather';
 import { translate } from '../resources/Translations';
 import styles from '../styles/components/Sidebar.module.css';
 
-// TODO: routing
-
 function Sidebar({ open, setOpen }) {
     const iconSize = 18;
     const iconSizeLarge = 22;
@@ -42,10 +40,10 @@ function Sidebar({ open, setOpen }) {
             </div>
             
             <nav className={styles.navigations}>
-                <h5>{translate('header.shop')}</h5>
-                <h5>{translate('header.locations')}</h5>
-                <h5>{translate('header.brands')}</h5>
-                <h5>{translate('header.contact')}</h5>
+                <h5 onClick={() => router.push('/shop')}>{translate('header.shop')}</h5>
+                <h5 onClick={() => router.push('/locations')}>{translate('header.locations')}</h5>
+                <h5 onClick={() => router.push('/our-brands')}>{translate('header.brands')}</h5>
+                <h5 onClick={() => router.push('/contact-us')}>{translate('header.contact')}</h5>
                 <h5 onClick={() => onClickSubmenu(0)}>
                     <span><ShoppingCart width={iconSize} /></span>
                     {translate('header.shopping_cart')}

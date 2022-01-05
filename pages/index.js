@@ -21,7 +21,6 @@ import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
 import StepCard from '../components/StepCard';
 
-// TODO: routing
 // TODO: amination
 
 function Home() {
@@ -52,7 +51,7 @@ function Home() {
                     <div className={styles.heroText}>
                         <h1 mode='hero'>{translate('hero_title')}</h1>
                         <p>{translate('hero_description')}</p>
-                        <button>{translate('order_now')}</button>
+                        <button onClick={() => router.push('/shop')}>{translate('order_now')}</button>
                     </div>
 
                     <div className={styles.heroVisual}>
