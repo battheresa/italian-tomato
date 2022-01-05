@@ -153,6 +153,11 @@
         row-gap: 40px;
         padding: 0 120px;
     }
+
+    .products { 
+        column-gap: 50px;
+        row-gap: 40px;
+    }
 }
 
 @media screen and (max-width: 768px) {

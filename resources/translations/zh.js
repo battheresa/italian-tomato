@@ -21,7 +21,7 @@ const common = {
     welcome: '歡迎!',
 
     best_selling: '最暢銷',
-    size: '蛋糕尺寸',
+    size: '尺寸',
     quantity: '數量',
     subtotal: '小計',
     checkout: '查看',
