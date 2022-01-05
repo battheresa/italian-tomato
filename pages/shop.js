@@ -48,6 +48,8 @@ function Shop() {
 
     // update product list
     useEffect(async () => {
+        console.log(menu);
+
         let tProducts = menu.value === 0 ? await getProducts() : await getProductsByTag(menu.tag);
 
         if (!checklist1 && !checklist2 && !checklist3 && !checklist4) {
@@ -111,12 +113,12 @@ function Shop() {
                 <div className={styles.shop}>
                     {/* cake type */}
                     {width >= deviceBreakpoints.tablet && <div>
-                        <h5 onClick={() => setMenu(0)} status={menu.value === 0 ? 'active' : ''}>{translate('all')}</h5>
-                        <h5 onClick={() => setMenu(1)} status={menu.value === 1 ? 'active' : ''}>{translate('cream_cake')}</h5>
-                        <h5 onClick={() => setMenu(2)} status={menu.value === 2 ? 'active' : ''}>{translate('cheese_cake')}</h5>
-                        <h5 onClick={() => setMenu(3)} status={menu.value === 3 ? 'active' : ''}>{translate('chocolate_cake')}</h5>
-                        <h5 onClick={() => setMenu(4)} status={menu.value === 4 ? 'active' : ''}>{translate('mousse')}</h5>
-                        <h5 onClick={() => setMenu(5)} status={menu.value === 5 ? 'active' : ''}>{translate('tart')}</h5>
+                        <h5 onClick={() => setMenu(menuList[0])} status={menu.value === 0 ? 'active' : ''}>{translate('all')}</h5>
+                        <h5 onClick={() => setMenu(menuList[1])} status={menu.value === 1 ? 'active' : ''}>{translate('cream_cake')}</h5>
+                        <h5 onClick={() => setMenu(menuList[2])} status={menu.value === 2 ? 'active' : ''}>{translate('cheese_cake')}</h5>
+                        <h5 onClick={() => setMenu(menuList[3])} status={menu.value === 3 ? 'active' : ''}>{translate('chocolate_cake')}</h5>
+                        <h5 onClick={() => setMenu(menuList[4])} status={menu.value === 4 ? 'active' : ''}>{translate('mousse')}</h5>
+                        <h5 onClick={() => setMenu(menuList[5])} status={menu.value === 5 ? 'active' : ''}>{translate('tart')}</h5>
                     </div>}
                     {width < deviceBreakpoints.tablet && <div>
                         <Dropdown content={menuList} value={menu} placeholder='' searchable={false} needTranslate={true} onChange={setMenu} />

@@ -75,8 +75,8 @@ function PromoCarousel({ promotions }) {
             {/* pagination */}
             <div className={styles.pagination}>
                 {promotions.map((_, i) => (
-                    <span onClick={() => changeSlide(i)}>
-                        <Circle key={i} width={iconSize} color='var(--mediumGreen)' fill={`var(${slide === i ? '--mediumGreen' : '--transparent'})`} style={{ transition: '0.5s'}} />
+                    <span key={i} onClick={() => changeSlide(i)}>
+                        <Circle width={iconSize} color='var(--mediumGreen)' fill={`var(${slide === i ? '--mediumGreen' : '--transparent'})`} style={{ transition: '0.5s'}} />
                     </span>
                 ))}
             </div>
