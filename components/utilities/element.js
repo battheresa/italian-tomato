@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { ChevronDown } from 'react-feather';
 import { useMousedownTarget } from './customHooks';
 
+import { translate } from '../../resources/Translations';
+
 export const Checkbox = ({ label, checked, onChange }) => (
     <label className='checkbox'>
         <input type='checkbox' checked={checked} onChange={(e) => onChange(e.target.checked)} />
@@ -18,7 +20,7 @@ export const Radio = ({ label, value, name, checked, onChange }) => (
     </label>
 );
 
-export const Dropdown = ({ content, value, placeholder, searchable=true, disabled=false, onChange }) => {
+export const Dropdown = ({ content, value, placeholder, searchable=true, disabled=false, needTranslate=false, onChange }) => {
     const target = useMousedownTarget('grandparent');
     const [ keyword, setKeyword ] = useState('');
     const [ open, setOpen ] = useState(false);
@@ -49,12 +51,12 @@ export const Dropdown = ({ content, value, placeholder, searchable=true, disable
     return (
         <div className='dropdown' clickable={disabled ? 'off' : ''}>
             <div className='button' onClick={() => disabled ? undefined : toggleOption(!open)}>
-                <input type='text' value={value.label || keyword} placeholder={placeholder} readOnly={!searchable} onChange={(e) => setKeyword(e.target.value)} />
+                <input type='text' value={needTranslate ? translate(value.label) : value.label || keyword} placeholder={placeholder} readOnly={!searchable} onChange={(e) => setKeyword(e.target.value)} />
                 <span><ChevronDown /></span>
             </div>
             <div className='option' status={open ? '' : 'close'}>
                 {list.map(item => (
-                    <p key={item.value} value={item.value} onClick={() => selectOption(item)}>{item.label}</p>
+                    <p key={item.value} value={item.value} onClick={() => selectOption(item)}>{needTranslate ? translate(item.label) : item.label}</p>
                 ))}
                 {list.length === 0 && <p>No keyword found.</p>}
             </div>

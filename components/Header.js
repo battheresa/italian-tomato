@@ -49,7 +49,7 @@ function Header({ open, setOpen }) {
             </header>
 
             {/* screen cover */}
-            <div className='screenCover' onClick={() => setOpen(false)} style={{ height: `${height}px`, opacity: open ? '1' : '0', zIndex: open ? '1' : '-1' }} />
+            <div className='screenCover' onClick={() => setOpen(false)} style={{ height: `${height}px`, opacity: open ? '1' : '0', zIndex: open ? '9' : '-1' }} />
 
             {/* sidebar */}
             <Sidebar open={open} setOpen={setOpen} />

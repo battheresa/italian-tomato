@@ -85,6 +85,9 @@ const shop = {
     ...common,
 
     all: 'All',
+    reset: 'Reset',
+    error: 'No Cakes Found...',
+
     cream_cake: 'Cream Cake',
     cheese_cake: 'Cheesecake',
     chocolate_cake: 'Chocolate Cake',

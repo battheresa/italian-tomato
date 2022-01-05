@@ -62,9 +62,9 @@
 .products > div {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 80px;
+    column-gap: 100px;
 
-    padding: 40px 0;
+    padding: 40px 280px;
 }
 
 .ordering {
@@ -157,6 +157,13 @@
     margin: 20px 0 2px;
 }
 
+@media screen and (max-width: 1520px) {
+    .products > div { 
+        column-gap: 80px;
+        padding: 40px 120px;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     .heroText > h1 {
         width: 100%;
@@ -168,6 +175,7 @@
 
     .products > div { 
         column-gap: 40px;
+        padding: 40px 80px;
     }
 
     .membership {
@@ -235,6 +243,7 @@
         grid-template-columns: repeat(2, 1fr);
         column-gap: 50px;
         row-gap: 60px;
+        padding: 40px 120px;
     }
 
     .ordering > div {
@@ -306,6 +315,10 @@
 }
 
 @media screen and (max-width: 680px) {
+    .products > div {
+        padding: 30px 60px;
+    }
+
     .ordering > div {
         grid-template-columns: repeat(2, 150px);
         column-gap: 50px;
@@ -344,8 +357,9 @@
     }
 
     .products > div {
-        column-gap: 5px;
+        column-gap: 40px;
         row-gap: 20px;
+        padding: 30px 15px;
     }
 
     .ordering > div {

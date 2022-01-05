@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useIntl } from 'react-intl';
 
 import Loading from '../public/dummy/product-loading.png';
 import styles from '../styles/components/ProductCard.module.css';
@@ -15,6 +16,7 @@ function ProductCard({ product }) {
         );
     }
 
+    const intl = useIntl();
     const router = useRouter();
     
     const size = product?.sizes[0];
@@ -23,12 +25,11 @@ function ProductCard({ product }) {
 
     return (
         <div className={styles.container}>
-            <div><img src={image} alt={product?.id} /></div>
-
-            <h3>{product?.name}</h3>
+            <img src={image} alt={product?.id} />
+            <h3>{intl.locale === 'en' ? product?.name : product?.name_zh}</h3>
             <h6>HK$ {price.price}</h6>
         </div>
-    )
+    );
 }
 
 export default ProductCard;

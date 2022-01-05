@@ -68,8 +68,8 @@ function Sidebar({ open, setOpen }) {
                     :
                     <div className={styles.language}>
                         <h2 color='alt'>{translate('header.language')}</h2>
-                        <h5 weight='medium'>English</h5>
-                        <h5 weight='medium'>中文</h5>
+                        <h5>English</h5>
+                        <h5>中文</h5>
                     </div>
                 }
             </div>

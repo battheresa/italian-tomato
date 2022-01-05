@@ -8,29 +8,27 @@ export const getIngredient = async (docId) => {
     return { id: ingredient.id, ...ingredient.data() };
 };
 
+let storedCakes;
 export const getCakes = async () => {
-    let products = [];
+    if (storedCakes)
+        return storedCakes;
+
+    let cakes = [];
     const response = await getDocs(collection(firestore, 'cakes'));
     
     response.forEach((item) => {
-        products.push({ id: item.id, ...item.data() });
+        cakes.push({ id: item.id, ...item.data() });
     });
 
-    return products;
+    storedCakes = cakes;
+    return cakes;
 };
 
-export const getFilters = async () => {
-    let filters = [];
-    const response = await getDocs(collection(firestore, 'filters'));
-    
-    response.forEach((item) => {
-        filters.push({ id: item.id, ...item.data() });
-    });
-
-    return filters;
-};
-
+let storedPromos;
 export const getPromos = async () => {
+    if (storedPromos)
+        return storedPromos;
+
     let promos = [];
     const response = await getDocs(collection(firestore, 'promotions'));
     
@@ -38,10 +36,15 @@ export const getPromos = async () => {
         promos.push({ id: item.id, ...item.data() });
     });
 
+    storedPromos = promos;
     return promos;
 };
 
+let storedLocations;
 export const getLocations = async () => {
+    if (storedLocations)
+        return storedLocations;
+
     let locations = [];
     const response = await getDocs(collection(firestore, 'locations'));
     
@@ -49,10 +52,15 @@ export const getLocations = async () => {
         locations.push({ id: item.id, ...item.data() });
     });
 
+    storedLocations = locations;
     return locations;
 };
 
+let storedContacts;
 export const getContact = async () => {
+    if (storedContacts)
+        return storedContacts;
+
     let contacts = [];
     const response = await getDocs(collection(firestore, 'contact'));
     
@@ -60,5 +68,6 @@ export const getContact = async () => {
         contacts.push({ id: item.id, ...item.data() });
     });
 
+    storedContacts = contacts;
     return contacts;
 };

@@ -14,6 +14,7 @@ import styles from '../styles/Home.module.css';
 
 import { getProductsByTag } from './api/services';
 import { useWindowDimensions, useWindowOffset } from '../components/utilities/customHooks';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -46,6 +47,7 @@ function Home() {
             <Header open={sidebar} setOpen={setSidebar} />
 
             <main className={styles.container}>
+                {/* hero section */}
                 <section className={styles.hero}>
                     <div className={styles.heroText}>
                         <h1 mode='hero'>{translate('hero_title')}</h1>
@@ -66,6 +68,7 @@ function Home() {
                     </div>
                 </section>
 
+                {/* best selling */}
                 <section className={styles.products}>
                     <h4 deco='underline'>{translate('best_selling')}</h4>
 
@@ -77,6 +80,7 @@ function Home() {
                     </div>
                 </section>
 
+                {/* how to order */}
                 <section className={styles.ordering}>
                     <h4 deco='underline'>{translate('ordering')}</h4>
 
@@ -88,6 +92,7 @@ function Home() {
                     </div>
                 </section>
 
+                {/* membership */}
                 <section className={styles.membership}>
                     <h4 deco='underline'>{translate('membership')}</h4>
 
@@ -96,6 +101,8 @@ function Home() {
                             <div>
                                 <h2>{translate('become_member_title')}</h2>
                                 <p>{translate('become_member_answer')}</p>
+
+                                {/* download app */}
                                 <span className={styles.membershipButton}>
                                     <button>
                                         <span style={{ marginTop: '-2px' }}><Image src={AppleStore} alt='iconmonstr-apple-store-icon' /></span>
@@ -117,17 +124,20 @@ function Home() {
                             </div>
                         </div>
                         <div className={styles.membershipDetails}>
+                            {/* basic membership */}
                             <div className={styles.membershipCard}>
                                 <h2>{translate('membership_basic_title')}</h2>
                                 {translate('basic_offer').split('\n').map((item, i) => (
                                     item.includes('*') ? <p key={i} weight='medium'>{item.replace('*', '')}</p> : <p key={i}>{item}</p>
-                                    ))}
+                                ))}
                             </div>
+
+                            {/* vip membership */}
                             <div className={styles.membershipCard}>
                                 <h2>{translate('membership_vip_title')}</h2>
                                 {translate('vip_offer').split('\n').map((item, i) => (
                                     item.includes('*') ? <p key={i} weight='medium'>{item.replace('*', '')}</p> : <p key={i}>{item}</p>
-                                    ))}
+                                ))}
                             </div>
                         </div>
                     </div>

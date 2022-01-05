@@ -84,6 +84,9 @@ const shop = {
     ...common,
 
     all: '一切',
+    reset: '重啟',
+    error: '沒有找到蛋糕...',
+
     cream_cake: '忌廉蛋糕',
     cheese_cake: '芝士蛋糕',
     chocolate_cake: '巧克力蛋糕',
