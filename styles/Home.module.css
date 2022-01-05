@@ -113,7 +113,7 @@
     width: 60%;
 }
 
-.membershipButton > button {
+.membershipButton > a > button {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -124,7 +124,7 @@
     width: 180px;
 }
 
-.membershipButton > button > span {
+.membershipButton > a > button > span {
     width: 22px;
     margin-right: 10px;
 }

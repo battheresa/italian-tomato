@@ -94,14 +94,18 @@ function Home() {
 
                                 {/* download app */}
                                 <span className={styles.membershipButton}>
-                                    <button>
-                                        <span style={{ marginTop: '-2px' }}><Image src={AppleStore} alt='iconmonstr-apple-store-icon' /></span>
-                                        APP STORE
-                                    </button>
-                                    <button>
-                                        <span><Image src={GooglePlay} alt='iconmonstr-google-play-icon' /></span>
-                                        GOOGLE PLAY
-                                    </button>
+                                    <a deco='none' href='https://apps.apple.com/hk/app/tomato-club/id1136195183' target='_blank'>
+                                        <button>
+                                            <span style={{ marginTop: '-2px' }}><Image src={AppleStore} alt='iconmonstr-apple-store-icon' /></span>
+                                            APP STORE
+                                        </button>
+                                    </a>
+                                    <a deco='none' href='https://play.google.com/store/apps/details?id=hk.com.italiantomato.mobileapp&hl=en_US&gl=US' target='_blank'>
+                                        <button>
+                                                <span><Image src={GooglePlay} alt='iconmonstr-google-play-icon' /></span>
+                                                GOOGLE PLAY
+                                        </button>
+                                    </a>
                                 </span>
                             </div>
                             <div>
