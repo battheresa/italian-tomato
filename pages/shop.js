@@ -94,6 +94,7 @@ function Shop() {
             <Header open={sidebar} setOpen={setSidebar} />
 
             <main className={styles.container}>
+                
                 {/* promotions */}
                 <section className={styles.carousel}>
                     <PromoCarousel promotions={promotions} />

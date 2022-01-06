@@ -21,7 +21,7 @@ import Footer from '../components/Footer';
 import BestSelling from '../components/BestSelling';
 import StepCard from '../components/StepCard';
 
-// TODO: hero section
+// TODO: change hero section
 
 function Home() {
     const router = useRouter();

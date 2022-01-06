@@ -1,10 +1,14 @@
 import { IntlProvider } from 'react-intl';
 import { useRouter } from 'next/router';
+
+import { StateWrapper } from '../utilities/StateContext';
+import { initialState, StateReducer } from '../utilities/StateReducer';
+
 import * as translations from '../translations/dictionary/';
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
-	const { locale, defaultLocale, pathname, asPath } = useRouter();
+function App({ Component, pageProps }) {
+	const { locale, defaultLocale, pathname } = useRouter();
 
 	const index = pathname.indexOf('/', 1);
 	const path = pathname.substring(0, index);
@@ -13,10 +17,12 @@ function MyApp({ Component, pageProps }) {
 	const content = language[index > 0 ? path : pathname];
 
 	return (
-		<IntlProvider locale={locale} defaultLocale={defaultLocale} messages={content}>
-			<Component {...pageProps} />
-		</IntlProvider>
+		<StateWrapper reducer={StateReducer} initialState={initialState}>
+			<IntlProvider locale={locale} defaultLocale={defaultLocale} messages={content}>
+				<Component {...pageProps} />
+			</IntlProvider>
+		</StateWrapper>
 	);
 }
 
-export default MyApp
+export default App;
