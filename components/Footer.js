@@ -1,10 +1,10 @@
 import { Facebook, Instagram } from 'react-feather';
 
-import { translate } from '../resources/Translations';
+import { translate } from '../translations/Translations';
 import styles from '../styles/components/Footer.module.css';
 
-import { deviceBreakpoints } from './utilities/config';
-import { useWindowDimensions } from './utilities/customHooks';
+import { deviceBreakpoints } from '../utilities/config';
+import { useWindowDimensions } from '../utilities/customHooks';
 
 function Footer() {
     const iconSize = 22;
@@ -12,6 +12,8 @@ function Footer() {
 
     return (
         <div className={styles.container}>
+            
+            {/* social media icon */}
             {width < deviceBreakpoints.mobile && <div className={styles.icons}>
                 <a deco='none' href='https://www.facebook.com/ItalianTomatoHongKong/' target='_blank'>
                     <p mode='footer'><Facebook width={iconSize} /></p>
@@ -21,8 +23,10 @@ function Footer() {
                 </a>
             </div>}
 
+            {/* copyright */}
             <p mode='footer'>&copy; {translate('footer.copyright')}</p>
 
+            {/* social media icon */}
             {width >= deviceBreakpoints.mobile && <div className={styles.icons}>
                 <a deco='none' href='https://www.facebook.com/ItalianTomatoHongKong/' target='_blank'>
                     <p mode='footer'><Facebook width={iconSize} /></p>
@@ -32,7 +36,7 @@ function Footer() {
                 </a>
             </div>}
         </div>
-    )
+    );
 }
 
 export default Footer;

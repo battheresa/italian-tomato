@@ -1,6 +1,6 @@
 import { Monitor, Calendar, CreditCard, ShoppingBag } from 'react-feather';
 
-import { translate } from '../resources/Translations';
+import { translate } from '../translations/Translations';
 import styles from '../styles/components/StepCard.module.css';
 
 function StepCard({ stepNumber }) {
@@ -17,7 +17,7 @@ function StepCard({ stepNumber }) {
             <h2>{translate(`step_title_${stepNumber}`)}</h2>
             <h6 hoverable='false'>{translate(`step_description_${stepNumber}`)}</h6>
         </div>
-    )
+    );
 }
 
 export default StepCard;

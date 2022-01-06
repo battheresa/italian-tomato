@@ -9,11 +9,11 @@ import Cake from '../public/decorations/gateau-aux-fraises.png';
 import BubbleMedium from '../public/decorations/bubble-medium-green.png';
 import BubbleLight from '../public/decorations/bubble-light-green.png';
 
-import { translate } from '../resources/Translations';
+import { translate } from '../translations/Translations';
 import styles from '../styles/Home.module.css';
 
 import { getProductsByTag } from './api/services';
-import { useWindowDimensions, useWindowOffset } from '../components/utilities/customHooks';
+import { useWindowDimensions, useWindowOffset } from '../utilities/customHooks';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -21,7 +21,7 @@ import Footer from '../components/Footer';
 import BestSelling from '../components/BestSelling';
 import StepCard from '../components/StepCard';
 
-// TODO: amination
+// TODO: hero section
 
 function Home() {
     const router = useRouter();
@@ -46,6 +46,7 @@ function Home() {
             <Header open={sidebar} setOpen={setSidebar} />
 
             <main className={styles.container}>
+                
                 {/* hero section */}
                 <section className={styles.hero}>
                     <div className={styles.heroText}>
@@ -88,6 +89,8 @@ function Home() {
 
                     <div>
                         <div className={styles.membershipIntro}>
+
+                            {/* become member faq */}
                             <div>
                                 <h2>{translate('become_member_title')}</h2>
                                 <p>{translate('become_member_answer')}</p>
@@ -108,10 +111,14 @@ function Home() {
                                     </a>
                                 </span>
                             </div>
+
+                            {/* become vip member faq */}
                             <div>
                                 <h2>{translate('become_vip_member_title')}</h2>
                                 <p>{translate('become_vip_member_answer')}</p>
                             </div>
+
+                            {/* points works faq */}
                             <div>
                                 <h2>{translate('points_work_title')}</h2>
                                 {translate('points_work_answer').split('\n').map((item, i) => (<p key={i}>{item}</p>))}

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown } from 'react-feather';
-import { useMousedownTarget } from './customHooks';
+import { useMousedownTarget } from '../utilities/customHooks';
 
-import { translate } from '../../resources/Translations';
+import { translate } from '../translations/Translations';
 
 export const Checkbox = ({ label, checked, onChange }) => (
     <label className='checkbox'>

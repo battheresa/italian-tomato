@@ -5,11 +5,11 @@ import { Search, ShoppingCart, Globe, Menu } from 'react-feather';
 import LogoFull from '../public/logo-full.png';
 import LogoCompact from '../public/logo-compact.png';
 
-import { translate } from '../resources/Translations';
+import { translate } from '../translations/Translations';
 import styles from '../styles/components/Header.module.css';
 
-import { deviceBreakpoints } from './utilities/config';
-import { useWindowDimensions } from './utilities/customHooks';
+import { deviceBreakpoints } from '../utilities/config';
+import { useWindowDimensions } from '../utilities/customHooks';
 
 import Sidebar from './Sidebar';
 
@@ -27,6 +27,7 @@ function Header({ open, setOpen }) {
     return (
         <div>
             <header className={styles.container}>
+                
                 {/* logo */}
                 <div className={styles.logo} onClick={() => router.push('/')}>
                     <Image src={width >= deviceBreakpoints.laptops ? LogoFull : LogoCompact} alt='italian-tomato-logo' />

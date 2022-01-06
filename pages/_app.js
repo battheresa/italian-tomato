@@ -1,6 +1,6 @@
 import { IntlProvider } from 'react-intl';
 import { useRouter } from 'next/router';
-import * as translations from '../resources/translations/';
+import * as translations from '../translations/dictionary/';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {

@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { Search, ShoppingCart, Globe, ArrowLeft, X } from 'react-feather';
 
-import { translate } from '../resources/Translations';
+import { translate } from '../translations/Translations';
 import styles from '../styles/components/Sidebar.module.css';
 
 function Sidebar({ open, setOpen }) {
@@ -14,10 +14,12 @@ function Sidebar({ open, setOpen }) {
     const [ submenu, setSubmenu ] = useState(0);
     const [ openSubmenu, setOpenSubmenu ] = useState(false);
     
+    // update open submenu
     useEffect(() => {
         setOpenSubmenu(open ? openSubmenu : false);
     }, [open]);
 
+    // on open submenu
     const onClickSubmenu = (menu) => {
         setSubmenu(menu);
         setOpenSubmenu(true);
@@ -25,6 +27,8 @@ function Sidebar({ open, setOpen }) {
 
     return (
         <div className={styles.container} style={{ right: open ? '0' : '-520px' }}>
+            
+            {/* back and close buttons */}
             <div>
                 <h5 onClick={() => setOpenSubmenu(false)} style={{ visibility: openSubmenu ? 'visible' : 'hidden', opacity: openSubmenu ? '1' : '0' }}>
                     <ArrowLeft width={iconSizeLarge} />
@@ -34,11 +38,13 @@ function Sidebar({ open, setOpen }) {
                 </h5>
             </div>
 
+            {/* search bar */}
             <div className={styles.searchBar}>
                 <Search width={iconSize} />
                 <input background='transparent' decoration='none' type='text' placeholder='Enter text' />
             </div>
             
+            {/* navigations */}
             <nav className={styles.navigations}>
                 <h5 onClick={() => router.push('/shop')}>{translate('header.shop')}</h5>
                 <h5 onClick={() => router.push('/locations')}>{translate('header.locations')}</h5>
@@ -54,6 +60,7 @@ function Sidebar({ open, setOpen }) {
                 </h5>
             </nav>
 
+            {/* submenu */}
             <div className={styles.submenu} style={{ right: open && openSubmenu ? '0' : '-420px' }}>
                 {submenu === 0 ? 
                     <div className={styles.shoppingCart}>
@@ -72,7 +79,7 @@ function Sidebar({ open, setOpen }) {
                 }
             </div>
         </div>
-    )
+    );
 }
 
 export default Sidebar;

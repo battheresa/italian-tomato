@@ -1,17 +1,17 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 
-import { translate } from '../resources/Translations';
+import { translate } from '../translations/Translations';
 import styles from '../styles/Shop.module.css';
 
 import { getProducts, getProductsByTag, getPromotions } from './api/services';
-import { deviceBreakpoints } from '../components/utilities/config';
-import { useWindowDimensions } from '../components/utilities/customHooks';
+import { deviceBreakpoints } from '../utilities/config';
+import { useWindowDimensions } from '../utilities/customHooks';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import { Checkbox, Dropdown } from '../components/utilities/element';
+import { Checkbox, Dropdown } from '../components/Utilities';
 import PromoCarousel from '../components/PromoCarousel';
 import ProductCard from '../components/ProductCard';
 import BestSelling from '../components/BestSelling';
@@ -103,6 +103,7 @@ function Shop() {
                 <BestSelling />
 
                 <section className={styles.shop}>
+
                     {/* cake type */}
                     {width >= deviceBreakpoints.tablet && <div>
                         <h5 onClick={() => setMenu(menuList[0])} status={menu.value === 0 ? 'active' : ''}>{translate('all')}</h5>

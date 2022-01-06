@@ -4,16 +4,16 @@ import { useIntl } from 'react-intl';
 import { useState } from 'react';
 import { MinusCircle, PlusCircle } from 'react-feather';
 
-import { translate } from '../../resources/Translations';
+import { translate } from '../../translations/Translations';
 import styles from '../../styles/Product.module.css';
 
 import { getProductIds, getProductById } from '../api/services';
-import { useWindowDimensions } from '../../components/utilities/customHooks';
+import { useWindowDimensions } from '../../utilities/customHooks';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-import { Radio } from '../../components/utilities/element';
+import { Radio } from '../../components/Utilities';
 import BestSelling from '../../components/BestSelling';
 
 function Product({ product }) {
@@ -39,6 +39,7 @@ function Product({ product }) {
 
             <main className={styles.container}>
                 <section className={styles.product}>
+                    
                     {/* product image */}
                     <div className={styles.image}>
                         <img src={product?.images.find(item => item.includes(selectedSize.replace(' ', '')))} alt={product?.id} />

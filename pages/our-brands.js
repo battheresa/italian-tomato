@@ -13,10 +13,10 @@ import FariBeurreCover from '../public/brands/fari-beurre-cover.png';
 import WasabouLogo from '../public/brands/wasabou.png';
 import WasabouCover from '../public/brands/wasabou-cover.png';
 
-import { translate } from '../resources/Translations';
+import { translate } from '../translations/Translations';
 import styles from '../styles/Brands.module.css';
 
-import { useWindowDimensions } from '../components/utilities/customHooks';
+import { useWindowDimensions } from '../utilities/customHooks';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -47,6 +47,7 @@ function Brands() {
             <main className={styles.container}>
                 <h1>{translate('page_title')}</h1>
 
+                {/* italian tomato */}
                 <section>
                     <div>
                         <h4 deco='underline'>ITALIAN TOMATO</h4>
@@ -62,6 +63,7 @@ function Brands() {
                     </div>
                 </section>
                 
+                {/* italian tomato cafe */}
                 <section className={styles.greenBackground}>
                     <div name='imageBefore' onMouseEnter={() => upateHover(1, true)} onMouseLeave={() => upateHover(1, false)}>
                         <div className={styles.cover} hover={hover[1] ? 'true' : 'false'}>
@@ -77,6 +79,7 @@ function Brands() {
                     </div>
                 </section>
 
+                {/* cafe and grill italian tomato */}
                 <section>
                     <div>
                         <h4 deco='underline'>CAFE &amp; GRILL ITALIAN TOMATO</h4>
@@ -92,6 +95,7 @@ function Brands() {
                     </div>
                 </section>
                 
+                {/* fari beurre */}
                 <section className={styles.greenBackground}>
                     <div name='imageBefore' onMouseEnter={() => upateHover(3, true)} onMouseLeave={() => upateHover(3, false)}>
                         <div className={styles.cover} hover={hover[3] ? 'true' : 'false'}>
@@ -107,6 +111,7 @@ function Brands() {
                     </div>
                 </section>
 
+                {/* wasabou kamamur yumemiya */}
                 <section>
                     <div>
                         <h4 deco='underline'>WASABOU KAMAKUR YUMEMIYA</h4>

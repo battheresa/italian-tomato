@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
-import { translate } from '../resources/Translations';
-import { Checkbox, Radio, Dropdown } from '../components/utilities/element';
+import { translate } from '../translations/Translations';
+import { Checkbox, Radio, Dropdown } from './Utilities';
 
 function Dummy() {
     const router = useRouter();

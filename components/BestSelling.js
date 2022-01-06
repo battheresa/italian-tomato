@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { translate } from '../resources/Translations';
+import { translate } from '../translations/Translations';
 import styles from '../styles/components/BestSelling.module.css';
 
 import { getProductsByTag } from '../pages/api/services';

@@ -7,13 +7,13 @@ import { Phone, Mail, Clock } from 'react-feather';
 import WaveLarge from '../public/decorations/wave-large.png';
 import WaveSmall from '../public/decorations/wave-small.png';
 
-import { translate } from '../resources/Translations';
+import { translate } from '../translations/Translations';
 import styles from '../styles/Contact.module.css';
 
 import { getContactInfo } from './api/services';
-import { deviceBreakpoints } from '../components/utilities/config';
-import { useWindowDimensions } from '../components/utilities/customHooks';
-import { formatOpening } from '../components/utilities/customFunctions';
+import { deviceBreakpoints } from '../utilities/config';
+import { useWindowDimensions } from '../utilities/customHooks';
+import { formatOpening } from '../utilities/customFunctions';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -48,6 +48,7 @@ function Contact() {
                     <h1>{translate('page_title')}</h1>
 
                     <div>
+                        {/* order hotline */}
                         <div>
                             <h4>{translate('ordering_title')}</h4>
                             <div className={styles.info}>
@@ -74,6 +75,8 @@ function Contact() {
                                 </p>
                             </div>
                         </div>
+
+                        {/* customer hotline */}
                         <div>
                             <h4>{translate('customer_title')}</h4>
                             <div className={styles.info}>
@@ -99,16 +102,16 @@ function Contact() {
                         </div>
                     </div>
 
+                    {/* important notice */}
                     <div className={styles.notice}>
                         <p weight='bold' mode='important'>{translate('notice_title').toUpperCase()}:</p>
                         <p mode='important'>{translate('notice_message')}</p>
                     </div>
                 </section>
 
+                {/* decoration */}
                 <section className={styles.waves}>
-                    <div>
-                        <Image src={width >= deviceBreakpoints.tablet ? WaveLarge : WaveSmall} alt='waves' />
-                    </div>
+                    <div><Image src={width >= deviceBreakpoints.tablet ? WaveLarge : WaveSmall} alt='waves' /></div>
                 </section>
             </main>
 

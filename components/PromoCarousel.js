@@ -5,8 +5,8 @@ import { Circle } from 'react-feather';
 import Loading from '../public/dummy/banner-loading.png';
 import styles from '../styles/components/PromoCarousel.module.css';
 
-import { deviceBreakpoints } from '../components/utilities/config';
-import { useWindowDimensions } from '../components/utilities/customHooks';
+import { deviceBreakpoints } from '../utilities/config';
+import { useWindowDimensions } from '../utilities/customHooks';
 
 function PromoCarousel({ promotions }) {
     if (!promotions) {
@@ -65,6 +65,7 @@ function PromoCarousel({ promotions }) {
 
     return (
         <div className={styles.container}>
+            
             {/* content */}
             {promotions.map((item, i) => (
                 <div key={item.id} className={styles.slide} style={{ display: getDisplay(slide, i), transform: `translateX(${getPosition(slide, i)}%)` }}>

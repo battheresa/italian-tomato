@@ -14,16 +14,16 @@ import FariBeurreBw from '../public/brands/fari-beurre-bw.png';
 import Wasabou from '../public/brands/wasabou.png';
 import WasabouBw from '../public/brands/wasabou-bw.png';
 
-import { translate } from '../resources/Translations';
+import { translate } from '../translations/Translations';
 import styles from '../styles/Locations.module.css';
 
 import { getLocationsByBrand } from './api/services';
-import { useWindowDimensions } from '../components/utilities/customHooks';
+import { useWindowDimensions } from '../utilities/customHooks';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import { Dropdown } from '../components/utilities/element';
+import { Dropdown } from '../components/Utilities';
 import LocationModal from '../components/LocationModal';
 
 function Locations() {
@@ -47,14 +47,17 @@ function Locations() {
         { label: 'Wasabou Kamakura Yumemiya', value: 4 },
     ];
     
+    // update locations list on change menu
     useEffect(() => {
         getLocationsByBrand(brands[menu]).then(content => setLocations(content));
     }, [menu]);
     
+    // update menu on change dropdown (small screen)
     useEffect(() => {
         setMenu(dropdown.value);
     }, [dropdown]);
 
+    // open location modal
     const openModal = (location) => {
         console.log(location)
         setOpen(true);
