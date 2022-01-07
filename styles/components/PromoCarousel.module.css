@@ -28,6 +28,10 @@
     object-position: 0 50%;
 }
 
+.image[mode=loading] {
+    object-position: 50% 50%;
+}
+
 .pagination {
     position: absolute;
     left: 35px;

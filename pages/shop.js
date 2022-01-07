@@ -24,7 +24,7 @@ function Shop() {
     const menuList = [ 
         { label: 'all', tag: 'all', value: 0 },
         { label: 'cream_cake', tag: 'cream-cake', value: 1 },
-        { label: 'cheese_cake', tag: 'cream-cake', value: 2 },
+        { label: 'cheese_cake', tag: 'cheese-cake', value: 2 },
         { label: 'chocolate_cake', tag: 'chocolate-cake', value: 3 },
         { label: 'mousse', tag: 'mousse', value: 4 },
         { label: 'tart', tag: 'tart', value: 5 },

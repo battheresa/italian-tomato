@@ -13,7 +13,7 @@ function PromoCarousel({ promotions }) {
         return (
             <div className={styles.container}>
                 <div className={styles.slide} style={{ display: 'flex' }}>
-                    <Image className={styles.image} src={Loading} alt='banner-loading' />
+                    <Image className={styles.image} src={Loading} alt='banner-loading' mode='loading' />
                 </div>
             </div>
         );
