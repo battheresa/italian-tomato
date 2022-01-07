@@ -39,7 +39,7 @@
     margin: 15px 0;
     
     border-bottom: 0.1em solid var(--black);
-    background-color: var(--translucent);
+    background-color: var(--translucent001);
 }
 
 .navigations {

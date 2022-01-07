@@ -15,7 +15,8 @@
 	--red: #D9320D;
 
 	--shadow: rgba(0, 0, 0, 0.1);
-	--translucent: rgba(0, 0, 0, 0.02);
+	--translucent001: rgba(0, 0, 0, 0.02);
+	--translucent002: rgba(0, 0, 0, 0.08);
     --transparent: rgba(0, 0, 0, 0);
 }
 
@@ -280,7 +281,7 @@ input {
 	border: none;
 	border-radius: 0 !important;
 	border-bottom: 0.1em solid var(--black);
-	background-color: var(--translucent);
+	background-color: var(--translucent001);
 	width: 100%;
 }
 
@@ -515,7 +516,7 @@ input::placeholder {
 /* ---------- others ---------- */
 
 .screenCover {
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: var(--translucent002);
 	width: 100vw;
 	height: 100vh;
 

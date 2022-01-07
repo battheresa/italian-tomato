@@ -67,7 +67,7 @@ function Header({ open, setOpen }) {
 
             {/* screen cover */}
             <div className='screenCover' onClick={() => setOpen(false)} style={{ height: `${height}px`, opacity: open ? '1' : '0', zIndex: open ? '9' : '-1' }} />
-            <div className='screenCover' onClick={() => setOpenModal(false)} style={{ height: `${height}px`, opacity: openModal ? '1' : '0', zIndex: openModal ? '9' : '-1' }} />
+            <div className='screenCover' onClick={() => setOpenModal(false)} style={{ height: `${height}px`, opacity: openModal ? '1' : '0', zIndex: openModal ? '9' : '-1', backgroundColor: modalMenu === 'language' ? 'var(--translucent001)' : 'var(--transparent)' }} />
 
             {/* sidebar */}
             <Sidebar open={open} setOpen={setOpen} />

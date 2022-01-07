@@ -15,8 +15,6 @@
 
 .modal {
     width: 30%;
-    
-    position: absolute;
     z-index: 10;
     
     border-radius: 20px;
@@ -29,5 +27,30 @@
 }
 
 .modal[mode=language] {
-    padding: 20px 0;
+    position: absolute;
+    top: 80px;
+    right: 60px;
+    
+    width: 180px;
+    padding: 15px 0 8px;
+
+    border-radius: 20px 0 20px 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .modal[mode=language] {
+        right: 40px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .modal[mode=language] {
+        right: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal[mode=language] {
+        right: 28px;
+    }
 }
