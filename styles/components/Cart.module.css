@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.container[mode=sidebar] {
+    padding: 0 50px;
+}
+
+.container[mode=modal] {
+    padding: 30px;
+}
+
+.container[mode=sidebar] > .list {
+    height: 50vh;
+}
+
+.container[mode=modal] > .list {
+    height: 280px;
+}
+
+.list {
+    overflow-y: scroll;
+    width: 100%;
+
+    margin-top: 10px;
+
+    scrollbar-width: 0;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.list::-webkit-scrollbar {
+    width: 0;
+}
+
+.item {
+    width: 100%;
+    padding: 10px 0 15px;
+    border-bottom: 1px solid var(--grey002);
+}
+
+.item > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.item > div > h4 {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.item > p {
+    font-style: italic;
+    margin: 0 10px;
+}
+
+.subtotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+    margin: 15px 0 5px;
+}
+
+.subtotal > h4 > span {
+    margin-left: 15px;
+}

@@ -173,6 +173,13 @@ h6[hoverable=false]:hover {
 	color: var(--black);
 }
 
+h6[weight=medium] { 
+	font-weight: 500;
+	font-size: 0.85em;
+	letter-spacing: 0.01em;
+	line-height: 1.5em;
+}
+
 p { 
 	font-size: 1em;
 	font-weight: 400;

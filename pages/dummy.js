@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { translate } from '../translations/Translations';
-import { Checkbox, Radio, Dropdown } from './Utilities';
+import { Checkbox, Radio, Dropdown } from '../components/Utilities';
 
 function Dummy() {
     const router = useRouter();
@@ -62,7 +62,6 @@ function Dummy() {
                 <section style={{ backgroundColor: 'var(--lightGreen)', padding: '15px', margin: '10px' }}>
                     <input type='text' placeholder='Enter text' />
                 </section>
-
 
                 <section>
                     <Dropdown content={dropdownList} value={selectedDropdown1} placeholder='--- Please Select ---' onChange={setSelectedDropdown1} />

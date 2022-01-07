@@ -2,12 +2,18 @@ export const initialState = {
     cart: [],
 };
 
+export const getSubtotal = (cart) => {
+    let subtotal = 0;
+    cart.forEach(item => { subtotal += item.price * item.quantity });
+    return subtotal;
+};
+
 export const StateReducer = (state, action) => {
     let nCart = [ ...state.cart ];
 
     switch (action.type) {
         case 'ADD_CART': 
-            if (action.quantity === 0)
+            if (action.item.quantity === 0)
                 return { ...state, cart: state.cart };
 
             const indexAdd = state.cart.findIndex(item => 
@@ -24,7 +30,7 @@ export const StateReducer = (state, action) => {
             return { ...state, cart: nCart };
 
         case 'UPDATE_CART': 
-            if (action.quantity === 0)
+            if (action.item.quantity === 0)
                 return { ...state, cart: state.cart };
 
             const indexUpdate = state.cart.findIndex(item => item.id === action.item.id);

@@ -5,11 +5,14 @@ import { Search, ShoppingCart, Globe, ArrowLeft, X } from 'react-feather';
 import { translate } from '../translations/Translations';
 import styles from '../styles/components/Sidebar.module.css';
 
+import Cart from './Cart';
+import Language from './Language';
+
 function Sidebar({ open, setOpen }) {
+    const router = useRouter();
+
     const iconSize = 18;
     const iconSizeLarge = 22;
-    
-    const router = useRouter();
     
     const [ submenu, setSubmenu ] = useState(0);
     const [ openSubmenu, setOpenSubmenu ] = useState(false);
@@ -23,6 +26,11 @@ function Sidebar({ open, setOpen }) {
     const onClickSubmenu = (menu) => {
         setSubmenu(menu);
         setOpenSubmenu(true);
+    };
+
+    // close sidebar
+    const closeSidebar = () => {
+        setOpen(false);
     };
 
     return (
@@ -62,21 +70,7 @@ function Sidebar({ open, setOpen }) {
 
             {/* submenu */}
             <div className={styles.submenu} style={{ right: open && openSubmenu ? '0' : '-420px' }}>
-                {submenu === 0 ? 
-                    <div className={styles.shoppingCart}>
-                        <h2 color='alt'>{translate('header.shopping_cart')}</h2>
-                        
-                        {/* TODO: after implement the shopping cart system */}
-
-                        <button>Checkout</button>
-                    </div>
-                    :
-                    <div className={styles.language}>
-                        <h2 color='alt'>{translate('header.language')}</h2>
-                        <h5>English</h5>
-                        <h5>中文</h5>
-                    </div>
-                }
+                {submenu === 0 ? <Cart mode='sidebar' close={closeSidebar} /> : <Language mode='sidebar' close={closeSidebar} />}
             </div>
         </div>
     );

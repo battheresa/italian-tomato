@@ -24,7 +24,7 @@ const common = {
     size: '尺寸',
     quantity: '數量',
     subtotal: '小計',
-    checkout: '查看',
+    review_order: '查看訂單',
     empty_cart: '您的購物車目前是空的。',
 };
 
@@ -108,7 +108,6 @@ const product = {
 const checkout = {
     ...common,
 
-    review_order: '查看訂單',
     product: '產品',
     cost: '成本',
     membership: '會員資格',

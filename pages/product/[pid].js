@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import { useIntl } from 'react-intl';
 import { useState } from 'react';
 import { MinusCircle, PlusCircle } from 'react-feather';
@@ -9,6 +8,7 @@ import styles from '../../styles/Product.module.css';
 
 import { getProductIds, getProductById } from '../api/services';
 import { useWindowDimensions } from '../../utilities/customHooks';
+import { useStateContext } from '../../utilities/StateContext';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -18,6 +18,7 @@ import BestSelling from '../../components/BestSelling';
 
 function Product({ product }) {
     const intl = useIntl();
+    const [ { cart }, dispatch ] = useStateContext();
 
     const iconSize = 22;
     const { width, height } = useWindowDimensions();
@@ -26,6 +27,21 @@ function Product({ product }) {
     const [ selectedSize, setSelectedSize ] = useState(product.sizes[0]);
     const [ selectedQuantity, setSelectedQuantity ] = useState(1);
     const [ selectedMessage, setSelectedMessage ] = useState('');
+    
+    const addToCart = () => {
+        dispatch({
+            type: 'ADD_CART',
+            item: {
+                id: product.id,
+                name: product.name,
+                name_zh: product.name_zh,
+                size: selectedSize,
+                quantity: selectedQuantity,
+                price: product.prices.find(item => item.size === selectedSize).price,
+                message: selectedMessage,
+            }
+        });
+    };
 
     return (
         <div style={{ height: `${height}px`, width: '100vw', overflow: sidebar ? 'hidden' : 'visible', display: 'flex', flexDirection: 'column' }}>
@@ -98,7 +114,7 @@ function Product({ product }) {
                         </span>
 
                         {/* add to cart */}
-                        <button>{translate('add_to_cart')}</button>
+                        <button onClick={() => addToCart()}>{translate('add_to_cart')}</button>
                     </div>
                 </section>
 
@@ -116,6 +132,7 @@ export async function getStaticPaths() {
     let paths = [];
 
     ids.forEach(item => {
+        paths.push({ params: { pid: item.id }});
         paths.push({ params: { pid: item.id }, locale: 'en' });
         paths.push({ params: { pid: item.id }, locale: 'zh' });
     });

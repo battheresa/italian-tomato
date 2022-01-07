@@ -86,25 +86,6 @@
     align-items: center;
 }
 
-.shoppingCart {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.language {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.language > h2 {
-    margin-bottom: 20px;
-}
-
-
 @media screen and (max-width: 480px) {
     .container {
         width: 80vw;

@@ -67,12 +67,12 @@
 }
 
 .details > span[name=message] > p {
-    width: 280px;
+    white-space: nowrap;
 }
 
 .details > span[name=message] > input {
     height: 38px;
-    margin: 3px 0 7px;
+    margin: 3px 10px 7px;
 }
 
 .details > button {
