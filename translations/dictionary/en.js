@@ -26,7 +26,8 @@ const common = {
     subtotal: 'Subtotal',
     review_order: 'Review Order',
     empty_cart: 'Your cart is currently empty.',
-
+    continue_shopping: 'Continue Shopping',
+    
     search_bar: 'Search Products',
 };
 
@@ -146,7 +147,6 @@ const checkout = {
     cvc: 'CVC',
     cvc_placeholder: '123',
 
-    continue_shopping: 'Continue Shopping',
     confirm_order: 'Confirm Order',
 };
 

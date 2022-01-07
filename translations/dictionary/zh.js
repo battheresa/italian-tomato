@@ -26,7 +26,8 @@ const common = {
     subtotal: '小計',
     review_order: '查看訂單',
     empty_cart: '您的購物車目前是空的。',
-
+    continue_shopping: '繼續購物',
+    
     search_bar: '搜索產品',
 };
 
@@ -145,7 +146,6 @@ const checkout = {
     cvc: 'CVC',
     cvc_placeholder: '123',
 
-    continue_shopping: '繼續購物',
     confirm_order: '確認訂單',
 };
 

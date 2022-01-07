@@ -197,31 +197,33 @@ p[mode=footer] { color: var(--white); }
 /* ---------- link ---------- */
 
 a, a:link , a:active {
-	font-size: 1em;
-	font-weight: 400;
-	letter-spacing: 0.01em; 
-	line-height: 1em;
+	cursor: pointer;
+	font-size: 0.9em;
+	font-weight: 700;
+	letter-spacing: 0.02em; 
+	line-height: 1.8em;
 
 	text-decoration: none;
+	text-transform: uppercase;
 	position: relative;
 }
 
 a:hover {
 	color: var(--black);
-	transition: 0.1s;
+	transition: 0.12s;
 }
 
 a::after {
 	content: '';
 	background-color: var(--transparent);
-	transition: 0.2s;
+	transition: 0.12s;
 	
-	width: 90%;
+	width: 100%;
 	height: 0.06em;
 	
 	position: absolute;
-	left: 5%;
-	top: 1.15em;
+	left: 0;
+	top: 1.68em;
 }
 
 a:hover::after {
@@ -527,7 +529,7 @@ input::placeholder {
 	transition: 0.2s;
 }
 
-/* mobile size */
+/* ---------- mobile size ---------- */
 
 @media screen and (max-width: 480px) {
 	h1[mode=hero] { 

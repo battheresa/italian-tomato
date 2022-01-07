@@ -1,4 +1,4 @@
-.container {
+.container, .container > div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -15,12 +15,40 @@
     padding: 30px;
 }
 
-.container[mode=sidebar] > .list {
+.container[mode=sidebar] > div > .list {
     height: 62%;
 }
 
-.container[mode=modal] > .list {
+.container[mode=modal] > div > .list {
     height: 280px;
+}
+
+.empty {
+    padding: 60px 20px 20px;
+}
+
+.empty > div {
+    width: 120px;
+    margin-bottom: 25px;
+}
+
+.empty > a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+    margin-top: 40px;
+}
+
+.empty > a > span {
+    height: 25px;
+    margin-right: 5px;
+}
+
+.empty > a::after {
+    left: 1px;
 }
 
 .list {
