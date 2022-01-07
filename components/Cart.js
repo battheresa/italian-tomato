@@ -10,7 +10,7 @@ import { getSubtotal } from '../utilities/StateReducer';
 
 // TODO: routing
 
-function Cart({ mode, close }) {
+function Cart({ mode, setOpen }) {
     const intl = useIntl();
     const router = useRouter();
     const [ { cart }, dispatch ] = useStateContext();
@@ -21,7 +21,7 @@ function Cart({ mode, close }) {
             
             <div className={styles.list}>
                 {cart.map(item => (
-                    <div className={styles.item}>
+                    <div key={item.id} className={styles.item}>
                         <div>
                             <h4>{intl.locale === 'en' ? item.name : item.name_zh}</h4>
                             <h6 hoverable='false' weight='medium'>HK$ {formatCurrency(item.price * item.quantity)}</h6>

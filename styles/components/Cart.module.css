@@ -4,6 +4,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .container[mode=sidebar] {
@@ -15,7 +16,7 @@
 }
 
 .container[mode=sidebar] > .list {
-    height: 50vh;
+    height: 62%;
 }
 
 .container[mode=modal] > .list {
@@ -71,4 +72,10 @@
 
 .subtotal > h4 > span {
     margin-left: 15px;
+}
+
+@media screen and (max-width: 480px) {
+    .container[mode=sidebar] {
+        padding: 0 32px;
+    }
 }

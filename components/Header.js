@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 import { Search, ShoppingCart, Globe, Menu } from 'react-feather';
 
 import LogoFull from '../public/logo-full.png';
@@ -12,6 +13,7 @@ import { deviceBreakpoints } from '../utilities/config';
 import { useWindowDimensions } from '../utilities/customHooks';
 
 import Sidebar from './Sidebar';
+import AnchorModal from './AnchorModal';
 
 // TODO: search menu
 // TODO: language menu
@@ -23,6 +25,19 @@ function Header({ open, setOpen }) {
     
     const router = useRouter();
     const { width, height } = useWindowDimensions();
+
+    const [ modalMenu, setModalMenu] = useState('');
+    const [ openModal, setOpenModal] = useState(false);
+
+    useEffect(() => {
+        if (!open)
+            setOpenModal(false);
+    }, [open]);
+
+    const openModalMenu = (mode) => {
+        setModalMenu(mode);
+        setOpenModal(true);
+    };
     
     return (
         <div>
@@ -40,8 +55,8 @@ function Header({ open, setOpen }) {
                     <h5 onClick={() => router.push('/our-brands')}>{translate('header.brands')}</h5>
                     <h5 onClick={() => router.push('/contact-us')}>{translate('header.contact')}</h5>
                     <h5><Search width={iconSize} /></h5>
-                    <h5><ShoppingCart width={iconSize} /></h5>
-                    <h5><Globe width={iconSize} /></h5>
+                    <h5 onClick={() => openModalMenu('cart')}><ShoppingCart width={iconSize} /></h5>
+                    <h5 onClick={() => openModalMenu('language')}><Globe width={iconSize} /></h5>
                 </nav>
 
                 {/* hamburger menu */}
@@ -52,9 +67,13 @@ function Header({ open, setOpen }) {
 
             {/* screen cover */}
             <div className='screenCover' onClick={() => setOpen(false)} style={{ height: `${height}px`, opacity: open ? '1' : '0', zIndex: open ? '9' : '-1' }} />
+            <div className='screenCover' onClick={() => setOpenModal(false)} style={{ height: `${height}px`, opacity: openModal ? '1' : '0', zIndex: openModal ? '9' : '-1' }} />
 
             {/* sidebar */}
             <Sidebar open={open} setOpen={setOpen} />
+            
+            {/* shopping cart and language */}
+            <AnchorModal mode={modalMenu} open={openModal} setOpen={setOpenModal} />
         </div>
     );
 }

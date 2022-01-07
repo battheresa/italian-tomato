@@ -42,14 +42,12 @@
     background-color: var(--translucent);
 }
 
-
 .navigations {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
 }
-
 
 .navigations > h5 {
     margin: 12px 0;

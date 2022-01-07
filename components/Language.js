@@ -3,12 +3,12 @@ import { useRouter } from 'next/router';
 import { translate } from '../translations/Translations';
 import styles from '../styles/components/Language.module.css';
 
-function Language({ mode, close }) {
+function Language({ mode, setOpen }) {
     const router = useRouter();
 
     const changeLocale = (locale) => {
         router.push(router.asPath, router.asPath, { locale: locale });
-        close();
+        setOpen(false);
     };
 
     return (
