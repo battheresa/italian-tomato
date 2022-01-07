@@ -26,6 +26,8 @@ const common = {
     subtotal: 'Subtotal',
     review_order: 'Review Order',
     empty_cart: 'Your cart is currently empty.',
+
+    search_bar: 'Search Products',
 };
 
 const home = {

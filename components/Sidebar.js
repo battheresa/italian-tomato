@@ -5,6 +5,7 @@ import { Search, ShoppingCart, Globe, ArrowLeft, X } from 'react-feather';
 import { translate } from '../translations/Translations';
 import styles from '../styles/components/Sidebar.module.css';
 
+import SearchBar from './SearchBar';
 import Cart from './Cart';
 import Language from './Language';
 
@@ -28,11 +29,6 @@ function Sidebar({ open, setOpen }) {
         setOpenSubmenu(true);
     };
 
-    // close sidebar
-    const closeSidebar = () => {
-        setOpen(false);
-    };
-
     return (
         <div className={styles.container} style={{ right: open ? '0' : '-520px' }}>
             
@@ -47,10 +43,7 @@ function Sidebar({ open, setOpen }) {
             </div>
 
             {/* search bar */}
-            <div className={styles.searchBar}>
-                <Search width={iconSize} />
-                <input background='transparent' decoration='none' type='text' placeholder='Enter text' />
-            </div>
+            <SearchBar mode='sidebar' setOpen={setOpen} />
             
             {/* navigations */}
             <nav className={styles.navigations}>
@@ -70,7 +63,7 @@ function Sidebar({ open, setOpen }) {
 
             {/* submenu */}
             <div className={styles.submenu} style={{ right: open && openSubmenu ? '0' : '-420px' }}>
-                {submenu === 0 ? <Cart mode='sidebar' close={closeSidebar} /> : <Language mode='sidebar' close={closeSidebar} />}
+                {submenu === 0 ? <Cart mode='sidebar' setOpen={setOpen} /> : <Language mode='sidebar' setOpen={setOpen} />}
             </div>
         </div>
     );

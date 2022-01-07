@@ -54,7 +54,7 @@ function Header({ open, setOpen }) {
                     <h5 onClick={() => router.push('/locations')}>{translate('header.locations')}</h5>
                     <h5 onClick={() => router.push('/our-brands')}>{translate('header.brands')}</h5>
                     <h5 onClick={() => router.push('/contact-us')}>{translate('header.contact')}</h5>
-                    <h5><Search width={iconSize} /></h5>
+                    <h5 onClick={() => openModalMenu('search')}><Search width={iconSize} /></h5>
                     <h5 onClick={() => openModalMenu('cart')}><ShoppingCart width={iconSize} /></h5>
                     <h5 onClick={() => openModalMenu('language')}><Globe width={iconSize} /></h5>
                 </nav>

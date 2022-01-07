@@ -26,6 +26,8 @@ const common = {
     subtotal: '小計',
     review_order: '查看訂單',
     empty_cart: '您的購物車目前是空的。',
+
+    search_bar: '搜索產品',
 };
 
 const home = {

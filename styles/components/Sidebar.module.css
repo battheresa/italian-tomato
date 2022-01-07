@@ -31,17 +31,6 @@
     transition: 0.2s;
 }
 
-.searchBar {
-    display: flex;
-    align-items: center;
-
-    padding: 0 10px;
-    margin: 15px 0;
-    
-    border-bottom: 0.1em solid var(--black);
-    background-color: var(--translucent001);
-}
-
 .navigations {
     display: flex;
     flex-direction: column;
