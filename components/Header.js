@@ -15,10 +15,6 @@ import { useWindowDimensions } from '../utilities/customHooks';
 import Sidebar from './Sidebar';
 import AnchorModal from './AnchorModal';
 
-// TODO: search menu
-// TODO: language menu
-// TODO: shopping cart menu
-
 function Header({ open, setOpen }) {
     const iconSize = 18;
     const iconSizeLarge = 22;
@@ -54,7 +50,6 @@ function Header({ open, setOpen }) {
                     <h5 onClick={() => router.push('/locations')}>{translate('header.locations')}</h5>
                     <h5 onClick={() => router.push('/our-brands')}>{translate('header.brands')}</h5>
                     <h5 onClick={() => router.push('/contact-us')}>{translate('header.contact')}</h5>
-                    <h5 onClick={() => openModalMenu('search')}><Search width={iconSize} /></h5>
                     <h5 onClick={() => openModalMenu('cart')}><ShoppingCart width={iconSize} /></h5>
                     <h5 onClick={() => openModalMenu('language')}><Globe width={iconSize} /></h5>
                 </nav>

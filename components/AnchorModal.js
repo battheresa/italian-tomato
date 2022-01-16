@@ -4,7 +4,6 @@ import styles from '../styles/components/AnchorModal.module.css';
 import { deviceBreakpoints } from '../utilities/config';
 import { useWindowDimensions } from '../utilities/customHooks';
 
-import SearchBar from './SearchBar';
 import Cart from './Cart';
 import Language from './Language';
 
@@ -22,7 +21,6 @@ function AnchorModal({ mode, open, setOpen }) {
                 <div style={{ display: open ? 'flex' : 'none' }}>
                     {mode === 'cart' && <Cart mode='modal' setOpen={setOpen} />}
                     {mode === 'language' && <Language mode='modal' setOpen={setOpen} />}
-                    {mode === 'search' && <SearchBar mode='modal' setOpen={setOpen} />}
                 </div>
             </div>
         </div>

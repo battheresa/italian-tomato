@@ -37,17 +37,6 @@
     border-radius: 20px 0 20px 20px;
 }
 
-.modal[mode=search] {
-    position: absolute;
-    top: 80px;
-    right: 135px;
-    
-    width: 320px;
-    padding: 0px 15px;
-
-    border-radius: 20px 0 20px 20px;
-}
-
 .modal > div {
     width: 100%;
 }
@@ -56,28 +45,16 @@
     .modal[mode=language] {
         right: 40px;
     }
-    
-    .modal[mode=search] {
-        right: 115px;
-    }
 }
 
 @media screen and (max-width: 1024px) {
     .modal[mode=language] {
         right: 30px;
     }
-    
-    .modal[mode=search] {
-        right: 105px;
-    }
 }
 
 @media screen and (max-width: 480px) {
     .modal[mode=language] {
         right: 28px;
-    }
-    
-    .modal[mode=search] {
-        right: 103px;
     }
 }

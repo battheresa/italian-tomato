@@ -95,23 +95,20 @@ function Shop() {
                     <PromoCarousel promotions={promotions} />
                 </section>
 
-                {/* best selling */}
-                <BestSelling />
-
                 <section className={styles.shop}>
 
                     {/* cake type */}
-                    {width >= deviceBreakpoints.tablet && <div>
+                    <div name='cakeType' mode='largeScreen'>
                         <h5 onClick={() => setMenu(menuList[0])} status={menu.value === 0 ? 'active' : ''}>{translate('all')}</h5>
                         <h5 onClick={() => setMenu(menuList[1])} status={menu.value === 1 ? 'active' : ''}>{translate('cream_cake')}</h5>
                         <h5 onClick={() => setMenu(menuList[2])} status={menu.value === 2 ? 'active' : ''}>{translate('cheese_cake')}</h5>
                         <h5 onClick={() => setMenu(menuList[3])} status={menu.value === 3 ? 'active' : ''}>{translate('chocolate_cake')}</h5>
                         <h5 onClick={() => setMenu(menuList[4])} status={menu.value === 4 ? 'active' : ''}>{translate('mousse')}</h5>
                         <h5 onClick={() => setMenu(menuList[5])} status={menu.value === 5 ? 'active' : ''}>{translate('tart')}</h5>
-                    </div>}
-                    {width < deviceBreakpoints.tablet && <div>
+                    </div>
+                    <div name='cakeType' mode='smallScreen'>
                         <Dropdown content={menuList} value={menu} searchable={false} needTranslate={true} onChange={setMenu} />
-                    </div>}
+                    </div>
 
                     {/* cake size */}
                     <div className={styles.filter}>
