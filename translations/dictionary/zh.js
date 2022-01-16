@@ -122,23 +122,21 @@ const checkout = {
     
     pickup_arrangement: '取件安排',
     notice_title: '重要通知',
-    notice_description: '您可以在 10:00 至 20:00 之間領取蛋糕。 成功處理付款後，您將通過電子郵件收到收據。 領取蛋糕時，請將收據出示給工作人員確認。',
+    notice_message: '您可以在 10:00 至 20:00 之間領取蛋糕。 成功處理付款後，您將通過電子郵件收到收據。 領取蛋糕時，請將收據出示給工作人員確認。',
     name: '名稱',
-    name_placeholder: '你的名字',
-    number: '聯繫電話',
-    number_placeholder: '您的聯繫電話',
-    email_address: '電子郵件地址',
-    email_address_placeholder: '您的電子郵件地址',
+    name_placeholder: '您的名字',
+    contact: '聯繫電話',
+    contact_placeholder: '您的聯繫電話',
+    email: '電子郵件',
+    email_placeholder: '您的電子郵件地址',
     date: '日期',
-    date_placeholder: '2021 年 12 月 15 日，星期三',
     time: '時間',
-    time_placeholder: '13:00',
-    store_location: '店面位置',
-    store_location_placeholder: '樂富 UNY 店',
+    store: '店面位置',
+    store_placeholder: '--- 請選擇 ---',
     
     payment: '支付',
     card_name: '持卡人姓名',
-    card_name_placeholder: '卡上的名字',
+    card_name_placeholder: '持卡人姓名',
     card_number: '卡號',
     card_number_placeholder: 'xxxx-xxxx-xxxx-xxxx',
     exp: '到期日',
@@ -146,7 +144,11 @@ const checkout = {
     cvc: 'CVC',
     cvc_placeholder: '123',
 
-    confirm_order: '確認訂單',
+    place_order: '下訂單',
+
+    order_comfirmation_title: '您的訂單已下達!',
+    order_comfirmation_number: '訂單號',
+    back_to_home: '返回首頁',
 };
 
 const brands = {

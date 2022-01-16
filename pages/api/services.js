@@ -79,6 +79,25 @@ export const getLocationsByBrand = async (brand) => {
     return allLocations.filter(item => item.id.includes(brand));
 };
 
+let storePickupLocations;
+export const getPickupLocations = async (brand) => {
+    if (storePickupLocations) 
+        return storePickupLocations
+    
+    let en = []
+    let zh = []
+
+    const allLocations = await getLocationsByBrand(brand);
+
+    allLocations.forEach(item => {
+        en.push({ value: item.id, label: item.name })
+        zh.push({ value: item.id, label: item.name_zh })
+    });
+
+    storePickupLocations = { en: en, zh: zh }
+    return { en: en, zh: zh };
+};
+
 export const getContactInfo = async () => {
-    return await getContact()
+    return await getContact();
 };

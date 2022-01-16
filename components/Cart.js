@@ -10,17 +10,17 @@ import styles from '../styles/components/Cart.module.css';
 import { formatCurrency } from '../utilities/customFunctions';
 import { useStateContext } from '../utilities/StateContext';
 import { getSubtotal } from '../utilities/StateReducer';
-import { ArrowLeft } from 'react-feather';
+
+import ArrowLink from './ArrowLink';
 
 function Cart({ mode, setOpen }) {
     const intl = useIntl();
     const router = useRouter();
-    const iconSize = 18;
     const [ { cart }, dispatch ] = useStateContext();
 
     const changeRoute = (destination) => {
-        router.push(destination);
         setOpen(false);
+        router.push(destination);
     };
 
     return (
@@ -52,18 +52,14 @@ function Cart({ mode, setOpen }) {
                 </div>
 
                 {/* review order */}
-                <button onClick={() => changeRoute('checkout')}>{translate('review_order')}</button>
+                <button onClick={() => changeRoute('/checkout')}>{translate('review_order')}</button>
             </div>}
 
             {/* empty cart */}
             {cart.length === 0 && <div className={styles.empty}> 
                 <div><Image src={EmptyCart} alt='empty-cart' /></div>
-                <h6 weight='medium'>{translate('empty_cart').toUpperCase()}</h6>
-                
-                <a onClick={() => changeRoute('/shop')}>
-                    <span><ArrowLeft width={iconSize} /></span>
-                    {translate('continue_shopping')}
-                </a>
+                <h6 weight='medium' hoverable='false'>{translate('empty_cart').toUpperCase()}</h6>
+                <ArrowLink text='continue_shopping' redirectTo={'/shop'} /> 
             </div>}
         </div>
     );

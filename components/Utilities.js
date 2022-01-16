@@ -20,14 +20,14 @@ export const Radio = ({ label, value, name, checked, onChange }) => (
     </label>
 );
 
-export const Dropdown = ({ content, value, placeholder, searchable=true, disabled=false, needTranslate=false, onChange }) => {
+export const Dropdown = ({ content, value, placeholder, searchable=true, disabled=false, needTranslate=false, mode, onChange }) => {
     const target = useMousedownTarget('grandparent');
     const [ keyword, setKeyword ] = useState('');
     const [ open, setOpen ] = useState(false);
     const [ list, setList ] = useState([ ...content ]);
 
     useEffect(() => {
-        if (searchable)
+        if (keyword.length > 0 && searchable)
             setList(content.filter(item => item.label.toLowerCase().includes(keyword.toLowerCase())));
     }, [keyword]);
 
@@ -37,21 +37,27 @@ export const Dropdown = ({ content, value, placeholder, searchable=true, disable
     }, [target]);
 
     const toggleOption = (action) => {
-        setKeyword(value.label !== '' ? value.label : keyword);
+        setKeyword(value.label || keyword);
         setList([ ...content ]);
         setOpen(action);
     };
 
     const selectOption = (item) => {
-        setKeyword(item.label);
+        setKeyword(item.label || '');
         setOpen(false);
         onChange(item);
     };
 
     return (
-        <div className='dropdown' clickable={disabled ? 'off' : ''}>
+        <div className='dropdown' clickable={disabled ? 'off' : ''} mode={mode}>
             <div className='button' onClick={() => disabled ? undefined : toggleOption(!open)}>
-                <input type='text' value={needTranslate ? translate(value.label) : value.label || keyword} placeholder={placeholder} readOnly={!searchable} onChange={(e) => setKeyword(e.target.value)} />
+                <input 
+                    type='text' 
+                    value={searchable ? keyword : (needTranslate ? translate(value.label) : value.label)} 
+                    placeholder={placeholder ? needTranslate ? translate(placeholder) : placeholder : ''} 
+                    readOnly={!searchable} 
+                    onChange={(e) => setKeyword(e.target.value)} 
+                />
                 <span><ChevronDown /></span>
             </div>
             <div className='option' status={open ? '' : 'close'}>

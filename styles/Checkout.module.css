@@ -1,0 +1,341 @@
+.container {
+    width: 100vw;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.review, .pickup, .payment, .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 60px 120px;
+    width: 100%;
+}
+
+.review > table { 
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.reviewHeader {
+    border-bottom: 1px solid var(--grey003);
+}
+
+.reviewHeader > th, .reviewSummary > table > tr > th {
+    font-size: 0.9em; 
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	line-height: 2.2em;
+
+	text-transform: uppercase;
+    text-align: left;
+}
+
+.reviewContent {
+    border-bottom: 1px solid var(--grey002);
+}
+
+.reviewContent > td:first-child, .reviewContent > td:nth-child(3) > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.reviewContent > td:first-child > img {
+    padding: 20px;
+    width: 130px;
+}
+
+.reviewContent > td:first-child > div > h4 {
+    margin-bottom: 0;
+}
+
+.reviewContent > td:first-child > div > p {
+    font-style: italic;
+    margin-top: 0;
+}
+
+.reviewContent > td:nth-child(3) > div > span, .reviewContent > td:last-child > span {
+    cursor: pointer;
+}
+
+.reviewContent > td:nth-child(3) > div > input {
+    width: 50px;
+    height: 38px;
+    margin: 3px 10px 7px;
+    text-align: center;
+}
+
+.reviewContent > td:nth-child(4) {
+    width: 180px;
+}
+
+.reviewEmpty {
+    text-align: center;
+    height: 120px;
+    border-bottom: 1px solid var(--grey002);
+}
+
+.reviewSummary {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 100%;
+    margin: 40px 0;
+}
+
+.reviewSummary > div {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.reviewSummary > div > div {
+    display: flex;
+    flex-direction: row;
+
+    flex: 1;
+    margin-right: 5vw;
+}
+
+.reviewSummary > div > div {
+    white-space: nowrap;
+}
+
+.reviewSummary > div > div > input {
+    width: 100%;
+}
+
+.reviewSummary > table {
+    border-collapse: collapse;
+    margin-right: 5vw;
+    min-width: 220px;
+}
+
+.reviewSummary > table > tbody > tr:last-child {
+    border-top: 1px solid var(--grey003);
+}
+
+.reviewSummary > table > tbody > tr > th, .reviewSummary > table > tbody > tr > td {
+    padding: 0 15px;
+}
+
+.reviewSummary > table > tbody > tr > th {
+    text-align: right;
+}
+
+.pickup {
+    background-color: var(--lightGreen);
+}
+
+.pickupNotice {
+    display: flex;
+    margin-top: 20px;
+}
+
+.pickupInput {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 20px;
+
+    margin-top: 30px;
+    width: 100%;
+}
+
+.pickupInput > div, .payment > div > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.pickupInput > div > h4, .payment > div > div > h4 {
+    white-space: nowrap;
+}
+
+.payment {
+    padding-bottom: 20px;
+}
+
+.payment > div { 
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    gap: 10px 20px;
+
+    width: 100%;
+    margin-top: 25px;
+}
+
+.buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-bottom: 120px;
+}
+
+@media screen and (max-width: 1520px) {
+    .reviewSummary > table {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .review, .pickup, .payment, .buttons {
+        padding: 100px 80px;
+    }
+
+    .pickupInput {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .payment > div {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .payment > div > div:nth-child(2) {
+        grid-row: 2;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .review, .pickup, .payment, .buttons {
+        padding: 40px;
+    }
+
+    .reviewSummary > div {
+        flex-direction: column;
+    }
+
+    .reviewSummary > div > div {
+        margin-right: 20px;
+    }
+
+    .reviewSummary > div > div:last-child {
+        margin-top: 15px;
+    }
+
+    .reviewSummary > table {
+        margin-right: 3vw;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .review > table { 
+        display: block;
+        overflow-x: scroll;
+        white-space: nowrap;
+
+        scrollbar-width: 0;  /* Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+    }
+
+    .review > table[items=empty] {
+        display: table;
+    }
+
+    .review > table::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .reviewContent > td:first-child {
+        min-width: 300px;
+    }
+    
+    .reviewContent > td:nth-child(2), .reviewContent > td:nth-child(4) {
+        min-width: 110px;
+    }
+    
+    .reviewContent > td:nth-child(3) {
+        min-width: 150px;
+    }
+    
+    .reviewContent > td:nth-child(5) {
+        min-width: 40px;
+    }
+
+    .reviewSummary {
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    .reviewSummary > div, .reviewSummary > div > div {
+        width: 100%;
+    }
+
+    .reviewSummary > table {
+        align-self: flex-end;
+        margin: 40px 0 0;
+    }
+
+    .pickupInput {
+        grid-template-columns: 1fr;
+    }
+
+    .payment > div {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .payment > div > div:nth-child(1), .payment > div > div:nth-child(2) {
+        grid-column-end: span 2;
+    } 
+
+    .payment > div > div:nth-child(3), .payment > div > div:nth-child(4) {
+        grid-row: 3;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .review, .pickup, .payment, .buttons {
+        padding: 20px 35px 40px;
+    }
+
+    .pickupNotice {
+        flex-direction: column;
+    }
+
+    .pickupNotice > p:first-child {
+        margin-bottom: 0;
+    }
+
+    .payment > div > div:nth-child(1), .payment > div > div:nth-child(2) {
+        flex-direction: column;
+    } 
+
+    .payment > div > div:nth-child(1) > h4, .payment > div > div:nth-child(2) > h4 {
+        margin-bottom: 0;
+    }
+
+    .payment > div > div:nth-child(2) > input {
+        margin-bottom: 18px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons > button {
+        margin-top: 15px;
+    }
+
+    .review > h1, 
+    .pickup > h1,
+    .payment > h1, 
+    .reviewContent > td > div > h4, 
+    .reviewSummary > div > div > h4, 
+    .pickupNotice > p,
+    .pickupInput > div > h4, 
+    .payment > div > div > h4 {
+        margin-left: 0;
+    }
+}

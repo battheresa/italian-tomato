@@ -36,21 +36,16 @@ function Shop() {
     const [ checklist4, setChecklist4 ] = useState(false);
 
     const [ promotions, setPromotions ] = useState(undefined);
-
-    const [ popular, setPopular ] = useState([]);
     const [ products, setProducts ] = useState(new Array(12).fill(undefined)); 
 
     // get initial product list
     useEffect(() => {
         getPromotions('active').then(content => setPromotions(content));
         getProducts().then(content => setProducts(content));
-        getProductsByTag('best-selling').then(content => setPopular(content));
     }, []);
 
     // update product list
     useEffect(async () => {
-        console.log(menu);
-
         let tProducts = menu.value === 0 ? await getProducts() : await getProductsByTag(menu.tag);
 
         if (!checklist1 && !checklist2 && !checklist3 && !checklist4) {
@@ -115,7 +110,7 @@ function Shop() {
                         <h5 onClick={() => setMenu(menuList[5])} status={menu.value === 5 ? 'active' : ''}>{translate('tart')}</h5>
                     </div>}
                     {width < deviceBreakpoints.tablet && <div>
-                        <Dropdown content={menuList} value={menu} placeholder='' searchable={false} needTranslate={true} onChange={setMenu} />
+                        <Dropdown content={menuList} value={menu} searchable={false} needTranslate={true} onChange={setMenu} />
                     </div>}
 
                     {/* cake size */}

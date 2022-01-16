@@ -123,23 +123,21 @@ const checkout = {
     
     pickup_arrangement: 'Pickup Arrangement',
     notice_title: 'Important',
-    notice_description: 'You can pick up your cake from 10:00 — 20:00. After the payment has been processed successfully, you will receive a receipt at your email. When picking up your cake, please show the receipt to the staff for confirmation.',
+    notice_message: 'You can pick up your cake from 10:00 — 20:00. After the payment has been processed successfully, you will receive a receipt at your email. When picking up your cake, please show the receipt to the staff for confirmation.',
     name: 'Name',
     name_placeholder: 'Your name',
-    number: 'Contact Number',
-    number_placeholder: 'Your contact number',
-    email_address: 'Email Address',
-    email_address_placeholder: 'Your email address',
+    contact: 'Contact',
+    contact_placeholder: 'Your contact number',
+    email: 'Email',
+    email_placeholder: 'Your email address',
     date: 'Date',
-    date_placeholder: 'Wednesday, 15th December, 2021',
     time: 'Time',
-    time_placeholder: '13:00',
-    store_location: 'Store Location',
-    store_location_placeholder: 'Lok Fu UNY Shop',
+    store: 'Store',
+    store_placeholder: '--- Please select ---',
     
     payment: 'Payment',
-    holder_name: 'Card Holder Name',
-    holder_name_placeholder: 'Name on the card',
+    card_name: 'Cardholder Name',
+    card_name_placeholder: 'Cardholder Name',
     card_number: 'Card Number',
     card_number_placeholder: 'xxxx-xxxx-xxxx-xxxx',
     exp: 'Exp',
@@ -147,7 +145,11 @@ const checkout = {
     cvc: 'CVC',
     cvc_placeholder: '123',
 
-    confirm_order: 'Confirm Order',
+    place_order: 'Place Order',
+
+    order_comfirmation_title: 'Your order has been placed!',
+    order_comfirmation_number: 'Order number',
+    back_to_home: 'Back to Home Page',
 };
 
 const brands = {

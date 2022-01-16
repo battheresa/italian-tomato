@@ -23,32 +23,13 @@
     height: 280px;
 }
 
-.empty {
-    padding: 60px 20px 20px;
-}
-
-.empty > div {
+.empty > div:first-child {
     width: 120px;
-    margin-bottom: 25px;
+    margin: 60px 20px 25px;
 }
 
-.empty > a {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    width: fit-content;
-    margin-top: 40px;
-}
-
-.empty > a > span {
-    height: 25px;
-    margin-right: 5px;
-}
-
-.empty > a::after {
-    left: 1px;
+.empty > div:last-child {
+    margin: 20px 0;
 }
 
 .list {

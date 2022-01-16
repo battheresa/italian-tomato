@@ -64,6 +64,10 @@ h1[mode=hero] {
 	color: var(--black);
 }
 
+h1[color=alt] {
+	color: var(--black);
+}
+
 h2 { 
 	font-size: 1.2em;
 	font-weight: 700;
@@ -106,6 +110,10 @@ h4[deco=underline]::after {
 	position: absolute;
 	left: calc(50% - 15px);
 	bottom: 0;
+}
+
+h4[mode=faded] {
+	color: var(--darkGreen);
 }
 
 h5 { 
@@ -295,6 +303,35 @@ input[decoration=none] {
 input::placeholder {
 	font-style: italic;
 	color: var(--grey003);
+}
+
+input[type=time], input[type=date] {
+	padding: 7px 10px 4px;
+	text-align: left !important;
+	-webkit-appearance: none;
+}
+
+input[type=time]::-webkit-datetime-edit-hour-field, 
+input[type=time]::-webkit-datetime-edit-minute-field,
+input[type=date]::-webkit-datetime-edit-day-field, 
+input[type=date]::-webkit-datetime-edit-month-field,
+input[type=date]::-webkit-datetime-edit-year-field {
+	background-color: var(--transparent);
+	border-radius: 8px;
+	padding: 5px;
+	margin: 0 5px;
+}
+
+input[type=time]::-webkit-datetime-edit-hour-field:focus, 
+input[type=time]::-webkit-datetime-edit-minute-field:focus {
+	color: var(--black);
+	background-color: var(--translucent002);
+}
+
+input[type=date]::-webkit-datetime-edit-day-field:focus, 
+input[type=date]::-webkit-datetime-edit-month-field:focus,
+input[type=date]::-webkit-datetime-edit-year-field:focus {
+	color: var(--black);
 }
 
 /* ---------- checkbox ---------- */
@@ -510,6 +547,28 @@ input::placeholder {
 
 .dropdown > .option > p:hover {
 	background-color: rgba(158, 143, 102, 0.2);
+}
+
+.dropdown[mode=disguise] > .button {
+	background-color: var(--translucent001);
+
+	margin: 2px;
+	padding: 8px 15px 4px;
+
+	border-radius: 0;
+	border-bottom: 0.1em solid var(--black);
+}
+
+.dropdown[mode=disguise] > .option {
+	background-color: #E4E3DF;
+}
+
+.dropdown[mode=disguise] {
+	margin: 0;
+}
+
+.dropdown[mode=disguise] > .button {
+	padding: 5px 10px;
 }
 
 /* ---------- others ---------- */

@@ -14,7 +14,7 @@ function SearchBar({ mode, setOpen }) {
     return (
         <form className={styles.container} mode={mode}>
             <Search width={iconSize} />
-            <input background='transparent' decoration='none' type='text' placeholder={translate('search_bar')} />
+            <input type='text' background='transparent' decoration='none' placeholder={translate('search_bar')} />
         </form>
     );
 }

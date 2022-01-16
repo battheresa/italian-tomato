@@ -7,6 +7,7 @@ import { translate } from '../../translations/Translations';
 import styles from '../../styles/Product.module.css';
 
 import { getProductIds, getProductById } from '../api/services';
+import { generateUUID } from '../../utilities/customFunctions';
 import { useWindowDimensions } from '../../utilities/customHooks';
 import { useStateContext } from '../../utilities/StateContext';
 
@@ -32,7 +33,7 @@ function Product({ product }) {
         dispatch({
             type: 'ADD_CART',
             item: {
-                id: product.id,
+                id: product.id + generateUUID(),
                 name: product.name,
                 name_zh: product.name_zh,
                 size: selectedSize,
@@ -96,7 +97,7 @@ function Product({ product }) {
                             <p weight='bold'>{translate('quantity').toUpperCase()}</p>
                             <div>
                                 <span onClick={() => setSelectedQuantity(Math.max(1, selectedQuantity - 1))}><MinusCircle width={iconSize} /></span>
-                                <input type='text' value={selectedQuantity} placeholder={selectedQuantity} onChange={(e) => setSelectedQuantity(Math.max(1, Math.min(e.target.value, 10)))} />
+                                <input type='text' value={selectedQuantity} onChange={(e) => setSelectedQuantity(Math.max(1, Math.min(e.target.value, 10)))} />
                                 <span onClick={() => setSelectedQuantity(Math.min(selectedQuantity + 1, 10))}><PlusCircle width={iconSize} /></span>
                             </div>
                         </span>

@@ -59,7 +59,6 @@ function Locations() {
 
     // open location modal
     const openModal = (location) => {
-        console.log(location)
         setOpen(true);
         setSelectedLocation(location);
     };
