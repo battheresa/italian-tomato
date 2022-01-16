@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
+import { Search } from 'react-feather';
 
 import { translate } from '../translations/Translations';
 import styles from '../styles/Shop.module.css';
 
 import { getProducts, getProductsByTag, getPromotions } from './api/services';
-import { deviceBreakpoints } from '../utilities/config';
 import { useWindowDimensions } from '../utilities/customHooks';
 
 import Header from '../components/Header';
@@ -14,7 +14,6 @@ import Footer from '../components/Footer';
 import { Checkbox, Dropdown } from '../components/Utilities';
 import PromoCarousel from '../components/PromoCarousel';
 import ProductCard from '../components/ProductCard';
-import BestSelling from '../components/BestSelling';
 
 function Shop() {
     const { width, height } = useWindowDimensions();
@@ -98,7 +97,7 @@ function Shop() {
                 <section className={styles.shop}>
 
                     {/* cake type */}
-                    <div name='cakeType' mode='largeScreen'>
+                    <div className={styles.cakeType} mode='largeScreen'>
                         <h5 onClick={() => setMenu(menuList[0])} status={menu.value === 0 ? 'active' : ''}>{translate('all')}</h5>
                         <h5 onClick={() => setMenu(menuList[1])} status={menu.value === 1 ? 'active' : ''}>{translate('cream_cake')}</h5>
                         <h5 onClick={() => setMenu(menuList[2])} status={menu.value === 2 ? 'active' : ''}>{translate('cheese_cake')}</h5>
@@ -106,7 +105,7 @@ function Shop() {
                         <h5 onClick={() => setMenu(menuList[4])} status={menu.value === 4 ? 'active' : ''}>{translate('mousse')}</h5>
                         <h5 onClick={() => setMenu(menuList[5])} status={menu.value === 5 ? 'active' : ''}>{translate('tart')}</h5>
                     </div>
-                    <div name='cakeType' mode='smallScreen'>
+                    <div className={styles.cakeType} mode='smallScreen'>
                         <Dropdown content={menuList} value={menu} searchable={false} needTranslate={true} onChange={setMenu} />
                     </div>
 
@@ -125,10 +124,11 @@ function Shop() {
                             <button onClick={() => resetChecklist()}>{translate('reset')}</button>
                         </div>
                     </div>
+                    
 
                     {/* products */}
                     <div className={styles.products} style={{ display: products.length === 0 ? 'flex' : 'grid' }}>
-                        {products.length === 0 && <h1>{translate('error')}</h1>}
+                        <h1 status={products.length === 0 ? 'show' : 'hide'}>{translate('error')}</h1>
                         {products.map((item, i) => (
                             <ProductCard key={item?.id || i} product={item} />
                         ))}

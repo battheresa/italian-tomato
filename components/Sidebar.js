@@ -5,7 +5,6 @@ import { Search, ShoppingCart, Globe, ArrowLeft, X } from 'react-feather';
 import { translate } from '../translations/Translations';
 import styles from '../styles/components/Sidebar.module.css';
 
-import SearchBar from './SearchBar';
 import Cart from './Cart';
 import Language from './Language';
 
@@ -42,9 +41,6 @@ function Sidebar({ open, setOpen }) {
                 </h5>
             </div>
 
-            {/* search bar */}
-            <SearchBar mode='sidebar' setOpen={setOpen} />
-            
             {/* navigations */}
             <nav className={styles.navigations}>
                 <h5 onClick={() => router.push('/shop')}>{translate('header.shop')}</h5>
