@@ -31,11 +31,11 @@ function Product({ product }) {
     const [ selectedSize, setSelectedSize ] = useState(product.sizes[0]);
     const [ selectedQuantity, setSelectedQuantity ] = useState(1);
     const [ selectedMessage, setSelectedMessage ] = useState('');
+    const [ images, setImages ] = useState();
 
     // get images
     useEffect(async () => {
-        const content = await getProductImagesById(product.id);
-        product.images = content;
+        getProductImagesById(product.id).then(content => setImages(content));
     }, [product]);
     
     // change button animation
@@ -82,7 +82,7 @@ function Product({ product }) {
                     
                     {/* product image */}
                     <div className={styles.image}>
-                        {product?.images ? <img src={product?.images?.find(item => item.includes(selectedSize.replace(' ', '')))} alt={product?.id} /> : <Image src={Loading} alt='product-loading' />}
+                        {images ? <img src={images?.find(item => item.includes(selectedSize.replace(' ', '')))} alt={product?.id} /> : <Image src={Loading} alt='product-loading' />}
                     </div>
 
                     {/* product details */}

@@ -57,16 +57,16 @@ function Shop() {
 
         let sProducts = [];
         
-        if (checklist1)
+        if (checklist1) 
             sProducts = sProducts.concat(tProducts.filter(item => item.sizes.includes('21 cm')));
 
-        if (checklist2)
+        if (checklist2) 
             sProducts = sProducts.concat(tProducts.filter(item => item.sizes.includes('15 cm')));
 
-        if (checklist3)
+        if (checklist3) 
             sProducts = sProducts.concat(tProducts.filter(item => item.sizes.includes('13 cm')));
 
-        if (checklist4)
+        if (checklist4) 
             sProducts = sProducts.concat(tProducts.filter(item => item.sizes.includes('11 cm')));
     
         setProducts([ ...new Set(sProducts) ]);
@@ -133,7 +133,7 @@ function Shop() {
                     <div className={styles.products} style={{ display: products.length === 0 ? 'flex' : 'grid' }}>
                         <h1 status={products.length === 0 ? 'show' : 'hide'}>{translate('error')}</h1>
                         {products.map((item, i) => (
-                            <ProductCard key={item?.id || i} product={item} />
+                            <ProductCard key={item?.id || i} product={item} sizeFilter={{ '21 cm': checklist1, '15 cm': checklist2, '13 cm': checklist3, '11 cm': checklist4 }} />
                         ))}
                     </div>
                 </section>
