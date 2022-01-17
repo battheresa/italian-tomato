@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Head from 'next/head';
 import { useIntl } from 'react-intl';
 import { useState, useEffect } from 'react';

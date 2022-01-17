@@ -13,7 +13,7 @@ function AnchorModal({ mode, open, setOpen }) {
     useEffect(() => {
         if (width < deviceBreakpoints.tablet)
             setOpen(false);
-    }, [width]);
+    }, [setOpen, width]);
 
     return (
         <div className={styles.container} style={{ visibility: open ? 'visible' : 'hidden' }}>

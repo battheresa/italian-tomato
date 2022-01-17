@@ -20,7 +20,7 @@ function Sidebar({ open, setOpen }) {
     // update open submenu
     useEffect(() => {
         setOpenSubmenu(open ? openSubmenu : false);
-    }, [open]);
+    }, [open, openSubmenu]);
 
     // on open submenu
     const onClickSubmenu = (menu) => {

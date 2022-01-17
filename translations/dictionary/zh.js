@@ -58,28 +58,28 @@ const home = {
     
     membership_basic_title: 'Basic Member',
     basic_offer: `
-        *Welcome Gift\n
-        HK$ 10 Cake Coupon x1\n
-        HK$ 20 Cake Coupon x1\n
-        Free Snack Coupon x1\n
-        Free Soup Coupon x1\n 
+        *歡迎禮物\n
+        HK$ 10 蛋糕券 x1\n
+        HK$ 20 蛋糕券 x1\n
+        免費小吃券 x1\n
+        免費湯券 x1\n 
     `,
     membership_vip_title: 'VIP Member',
     vip_offer: `
-        *Welcome Gift\n
-        HK$ 50 Cash coupon x2\n
-        HK$ 20 Cash coupon x2\n
+        *歡迎禮物\n
+        HK$ 50 現金券 x2\n
+        HK$ 20 現金券 x2\n
         *Italian Tomato Restaurants\n
-        15% off Restaurants Coupon x1\n
-        HK$ 50 Restaurant Coupon x2\n
-        Free Upgrade Set x1\n
+        15% 關閉餐廳優惠券 x1\n
+        HK$ 50 餐廳優惠券 x2\n
+        免費升級套裝 x1\n
         *Italian Tomato Cake\n
-        HK$ 20 Cake Coupon x3\n
-        HK$ 10 Cake Coupon x5\n
+        HK$ 20 蛋糕券 x3\n
+        HK$ 10 蛋糕券 x5\n
         *Fari-beurre\n
-        Free Bake Cheese Tart Coupon\n
-        20% off on Birthday Cake\n
-        5% off on the 28th of every month
+        免費烤芝士撻優惠券\n
+        20% 關閉生日蛋糕\n
+        5% 每個月的 28 日休息\n
     `,
 };
 

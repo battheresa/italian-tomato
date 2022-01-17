@@ -68,8 +68,8 @@ const home = {
     vip_offer: `
         *10% off Year-round\n
         *Welcome Gift\n
-        HK$ 50 Cash coupon x2\n
-        HK$ 20 Cash coupon x2\n
+        HK$ 50 Cash Coupon x2\n
+        HK$ 20 Cash Coupon x2\n
         *Italian Tomato Restaurants\n
         15% off Restaurants Coupon x1\n
         HK$ 50 Restaurant Coupon x2\n

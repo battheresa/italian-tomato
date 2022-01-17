@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { Search } from 'react-feather';

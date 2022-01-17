@@ -15,10 +15,10 @@ function Footer() {
             
             {/* social media icon */}
             {width < deviceBreakpoints.mobile && <div className={styles.icons}>
-                <a deco='none' href='https://www.facebook.com/ItalianTomatoHongKong/' target='_blank'>
+                <a deco='none' href='https://www.facebook.com/ItalianTomatoHongKong/' target='_blank' rel='noreferrer'>
                     <p mode='footer'><Facebook width={iconSize} /></p>
                 </a>
-                <a deco='none' href='https://www.instagram.com/italiantomatohongkong/' target='_blank'>
+                <a deco='none' href='https://www.instagram.com/italiantomatohongkong/' target='_blank' rel='noreferrer'>
                     <p mode='footer'><Instagram width={iconSize} /></p>
                 </a>
             </div>}
@@ -28,10 +28,10 @@ function Footer() {
 
             {/* social media icon */}
             {width >= deviceBreakpoints.mobile && <div className={styles.icons}>
-                <a deco='none' href='https://www.facebook.com/ItalianTomatoHongKong/' target='_blank'>
+                <a deco='none' href='https://www.facebook.com/ItalianTomatoHongKong/' target='_blank' rel='noreferrer'>
                     <p mode='footer'><Facebook width={iconSize} /></p>
                 </a>
-                <a deco='none' href='https://www.instagram.com/italiantomatohongkong/' target='_blank'>
+                <a deco='none' href='https://www.instagram.com/italiantomatohongkong/' target='_blank' rel='noreferrer'>
                     <p mode='footer'><Instagram width={iconSize} /></p>
                 </a>
             </div>}

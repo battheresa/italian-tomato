@@ -29,19 +29,20 @@ export const Dropdown = ({ content, value, placeholder, searchable=true, disable
     useEffect(() => {
         if (keyword.length > 0 && searchable)
             setList(content.filter(item => item.label.toLowerCase().includes(keyword.toLowerCase())));
-    }, [keyword]);
+    }, [content, keyword, searchable]);
 
     useEffect(() => {
         if (target && target.className !== 'dropdown') 
             toggleOption(false); 
-    }, [target]);
+    }, [target, toggleOption]);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const toggleOption = (action) => {
         setKeyword(value.label || keyword);
         setList([ ...content ]);
         setOpen(action);
     };
-
+    
     const selectOption = (item) => {
         setKeyword(item.label || '');
         setOpen(false);

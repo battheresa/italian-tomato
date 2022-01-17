@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import AppleStore from '../public/apple-store-icon.png';
 import GooglePlay from '../public/google-play-icon.png';
@@ -11,8 +11,7 @@ import Bubble from '../public/decorations/bubble.png';
 import { translate } from '../translations/Translations';
 import styles from '../styles/Home.module.css';
 
-import { getProductsByTag } from './api/services';
-import { useWindowDimensions, useWindowOffset } from '../utilities/customHooks';
+import { useWindowDimensions } from '../utilities/customHooks';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -23,14 +22,7 @@ import StepCard from '../components/StepCard';
 function Home() {
     const router = useRouter();
     const { width, height } = useWindowDimensions();
-    const { offsetX, offsetY } = useWindowOffset();
-    
     const [ sidebar, setSidebar ] = useState(false);
-    const [ products, setProducts ] = useState([]);
-    
-    useEffect(() => {
-        getProductsByTag('best-selling').then(content => setProducts(content));
-    }, []);
 
     return (
         <div style={{ height: `${height}px`, width: '100vw', overflow: sidebar ? 'hidden' : 'visible' }}>
@@ -91,16 +83,16 @@ function Home() {
 
                                 {/* download app */}
                                 <span className={styles.membershipButton}>
-                                    <a deco='none' href='https://apps.apple.com/hk/app/tomato-club/id1136195183' target='_blank'>
+                                    <a deco='none' href='https://apps.apple.com/hk/app/tomato-club/id1136195183' target='_blank' rel='noreferrer'>
                                         <button>
                                             <span style={{ marginTop: '-2px' }}><Image src={AppleStore} alt='iconmonstr-apple-store-icon' /></span>
                                             APP STORE
                                         </button>
                                     </a>
-                                    <a deco='none' href='https://play.google.com/store/apps/details?id=hk.com.italiantomato.mobileapp&hl=en_US&gl=US' target='_blank'>
+                                    <a deco='none' href='https://play.google.com/store/apps/details?id=hk.com.italiantomato.mobileapp&hl=en_US&gl=US' target='_blank' rel='noreferrer'>
                                         <button>
-                                                <span><Image src={GooglePlay} alt='iconmonstr-google-play-icon' /></span>
-                                                GOOGLE PLAY
+                                            <span><Image src={GooglePlay} alt='iconmonstr-google-play-icon' /></span>
+                                            GOOGLE PLAY
                                         </button>
                                     </a>
                                 </span>

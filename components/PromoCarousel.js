@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Circle } from 'react-feather';
@@ -9,16 +11,6 @@ import { deviceBreakpoints } from '../utilities/config';
 import { useWindowDimensions } from '../utilities/customHooks';
 
 function PromoCarousel({ promotions }) {
-    if (!promotions) {
-        return (
-            <div className={styles.container}>
-                <div className={styles.slide} style={{ display: 'flex' }}>
-                    <Image className={styles.image} src={Loading} alt='banner-loading' mode='loading' />
-                </div>
-            </div>
-        );
-    } 
-
     const iconSize = 15;
     const { width, height } = useWindowDimensions();
     const [ slide, setSlide ] = useState(0);
@@ -30,7 +22,18 @@ function PromoCarousel({ promotions }) {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [slide]);
+    }, [promotions, slide]);
+
+    // promotions is undefined
+    if (!promotions) {
+        return (
+            <div className={styles.container}>
+                <div className={styles.slide} style={{ display: 'flex' }}>
+                    <Image className={styles.image} src={Loading} alt='banner-loading' mode='loading' />
+                </div>
+            </div>
+        );
+    } 
 
     // manually change slide
     const changeSlide = (page) => {

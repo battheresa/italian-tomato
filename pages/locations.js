@@ -26,10 +26,11 @@ import Footer from '../components/Footer';
 import { Dropdown } from '../components/Utilities';
 import LocationModal from '../components/LocationModal';
 
+const brands = ['italian-tomato', 'tomato-cafe', 'cafe-grill', 'fari-beurre', 'wasabou'];
+
 function Locations() {
     const intl = useIntl();
     const { width, height } = useWindowDimensions();
-    const brands = ['italian-tomato', 'tomato-cafe', 'cafe-grill', 'fari-beurre', 'wasabou'];
 
     const [ sidebar, setSidebar ] = useState(false);
     const [ open, setOpen ] = useState(false);

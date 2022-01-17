@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
@@ -7,23 +9,22 @@ import Loading from '../public/dummy/product-loading.png';
 import styles from '../styles/components/ProductCard.module.css';
 
 function ProductCard({ product, sizeFilter }) {
-    if (!product) {
-        return (
-            <div className={styles.container}>
-                <div><Image src={Loading} alt='product-loading' /></div>
-            </div>
-        );
-    }
-
     const intl = useIntl();
     const router = useRouter();
     
-    const [ size, setSize ] = useState(product?.sizes[0]);
-    const [ price, setPrice ] = useState(product?.prices.find(item => item.size === size));
-    const [ image, setImage ] = useState(product?.images.find(item => item.size === size));
+    const [ price, setPrice ] = useState();
+    const [ image, setImage ] = useState();
 
     useEffect(() => {
-        if (sizeFilter) {
+        if (product) {
+            const nSize = product?.sizes[0];    
+            setPrice(product?.prices.find(item => item.size === nSize));
+            setImage(product?.images.find(item => item.size === nSize));
+        }
+    }, [product]);
+
+    useEffect(() => {
+        if (product && sizeFilter) {
             let nSize = product.sizes[0];
 
             if (sizeFilter['21 cm'] && product.sizes.includes('21 cm')) 
@@ -38,11 +39,10 @@ function ProductCard({ product, sizeFilter }) {
             if (sizeFilter['11 cm'] && product.sizes.includes('11 cm')) 
                 nSize = '11 cm';
             
-            setSize(nSize);
             setPrice(product.prices.find(item => item.size === nSize));
             setImage(product.images.find(item => item.size === nSize));
         }
-    }, [sizeFilter]);
+    }, [product, sizeFilter]);
 
     return (
         <div className={styles.container} onClick={() => router.push(`/product/${product.id}`)}>

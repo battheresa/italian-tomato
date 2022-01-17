@@ -241,7 +241,7 @@ a[deco=none] {
 	margin: 0;
 }
 
-a[deco=none]:hover::after {
+a[deco=none]::after {
 	width: 0;
 	height: 0;
 
