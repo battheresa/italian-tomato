@@ -6,8 +6,7 @@ import { useState, useEffect } from 'react';
 import AppleStore from '../public/apple-store-icon.png';
 import GooglePlay from '../public/google-play-icon.png';
 import Cake from '../public/decorations/gateau-aux-fraises.png';
-import BubbleMedium from '../public/decorations/bubble-medium-green.png';
-import BubbleLight from '../public/decorations/bubble-light-green.png';
+import Bubble from '../public/decorations/bubble.png';
 
 import { translate } from '../translations/Translations';
 import styles from '../styles/Home.module.css';
@@ -20,8 +19,6 @@ import Footer from '../components/Footer';
 
 import BestSelling from '../components/BestSelling';
 import StepCard from '../components/StepCard';
-
-// TODO: change hero section
 
 function Home() {
     const router = useRouter();
@@ -56,11 +53,8 @@ function Home() {
                     </div>
 
                     <div className={styles.heroVisual}>
-                        <span name='bubble2'>
-                            <Image src={BubbleLight} alt='gateau-aux-fraises-bubble-2' />
-                        </span>
-                        <span name='bubble1'>
-                            <Image src={BubbleMedium} alt='gateau-aux-fraises-bubble-1' />
+                        <span name='bubble'>
+                            <Image src={Bubble} alt='gateau-aux-fraises-bubble-1' />
                         </span>
                         <span name='cake'>
                             <Image src={Cake} alt='gateau-aux-fraises' />

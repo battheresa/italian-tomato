@@ -42,17 +42,13 @@
 }
 
 .heroVisual > span[name=cake] {
-    width: 65%;
-    transform: rotate(-5deg) translate(-10px, 12px);
+    width: 58%;
+    transform: rotate(-5deg) translate(0px, 12px);
 }
 
-.heroVisual > span[name=bubble1] {
-    width: 92%;
-    right: 2%;
-}
-
-.heroVisual > span[name=bubble2] {
-    width: 92%;
+.heroVisual > span[name=bubble] {
+    width: 88%;
+    right: 4%;
 }
 
 .ordering {
@@ -146,6 +142,10 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .hero {
+        height: 70vh;
+    }
+    
     .heroText > h1 {
         width: 100%;
     }
@@ -179,6 +179,7 @@
     .hero {
         display: flex;
         flex-direction: column;
+        height: 75vh;
         padding: 30px 60px;
     }
 
@@ -196,23 +197,18 @@
     }
 
     .heroVisual > span {
-        bottom: 10%;
+        bottom: 20%;
         right: 0;
     }
 
     .heroVisual > span[name=cake] {
         width: 45%;
-        transform: rotate(-5deg) translate(-28%, -10%);
+        transform: rotate(-5deg) translate(-24%, -10%);
     }
 
-    .heroVisual > span[name=bubble1] {
+    .heroVisual > span[name=bubble] {
         width: 65%;
         right: 0;
-    }
-
-    .heroVisual > span[name=bubble2] {
-        width: 65%;
-        right: 2%;
     }
 
     .ordering > div {
@@ -242,6 +238,7 @@
 @media screen and (max-width: 768px) {
     .hero {
         padding: 30px;
+        height: 70vh;
     }
 
     .heroText > h1 {
@@ -254,17 +251,12 @@
 
     .heroVisual > span[name=cake] {
         width: 50%;
-        transform: rotate(-5deg) translate(-26%, -8%);
+        transform: rotate(-5deg) translate(-30%, -8%);
     }
 
-    .heroVisual > span[name=bubble1] {
+    .heroVisual > span[name=bubble] {
         width: 72%;
-        right: 0;
-    }
-
-    .heroVisual > span[name=bubble2] {
-        width: 72%;
-        right: 2%;
+        right: 4%;
     }
 
     .ordering > div {
@@ -306,14 +298,9 @@
         transform: rotate(-5deg) translate(-26%, 10%);
     }
 
-    .heroVisual > span[name=bubble1] {
+    .heroVisual > span[name=bubble] {
         width: 92%;
         right: 0;
-    }
-
-    .heroVisual > span[name=bubble2] {
-        width: 92%;
-        right: 2%;
     }
 
     .ordering > div {
