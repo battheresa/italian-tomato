@@ -141,7 +141,7 @@ function Checkout() {
                             {cart.map((item, i) => (
                                 <tr key={item.id + item.uuid} className={styles.reviewContent}>
                                     <td>
-                                        <img src='https://firebasestorage.googleapis.com/v0/b/italian-tomato-dc5fd.appspot.com/o/cakes%2Fgateau-aux-fraises%2Fgateau-aux-fraises-15cm.jpg?alt=media&token=83b9bae6-e3bd-4905-bf0c-9721d3a66a00' alt='gateau-aux-fraises' />
+                                        <img src={item.image} alt='gateau-aux-fraises' />
                                         <div>
                                             <h4>{item.name || 'abc'}</h4>
                                             <p mode='faded'>{item.message || 'No birthday message'}</p>

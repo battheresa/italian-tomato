@@ -1,10 +1,8 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import { useIntl } from 'react-intl';
+import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
+import { useIntl } from 'react-intl';
 import { Check, MinusCircle, PlusCircle } from 'react-feather';
-
-import Loading from '../../public/dummy/product-loading.png';
 
 import { translate } from '../../translations/Translations';
 import styles from '../../styles/Product.module.css';
@@ -21,6 +19,7 @@ import BestSelling from '../../components/BestSelling';
 
 function Product({ product }) {
     const intl = useIntl();
+    const { pathname } = useRouter();
     const [ { cart }, dispatch ] = useStateContext();
 
     const iconSize = 22;
@@ -28,16 +27,10 @@ function Product({ product }) {
     const [ sidebar, setSidebar ] = useState(false);
     const [ animate, setAnimate ] = useState('');
 
-    const [ selectedSize, setSelectedSize ] = useState(product.sizes[0]);
+    const [ selectedSize, setSelectedSize ] = useState(product?.sizes[0]);
     const [ selectedQuantity, setSelectedQuantity ] = useState(1);
     const [ selectedMessage, setSelectedMessage ] = useState('');
-    const [ images, setImages ] = useState();
 
-    // get images
-    useEffect(async () => {
-        getProductImagesById(product.id).then(content => setImages(content));
-    }, [product]);
-    
     // change button animation
     useEffect(() => {
         if (animate === 'animate') {
@@ -60,6 +53,7 @@ function Product({ product }) {
                 size: selectedSize,
                 quantity: selectedQuantity,
                 price: product.prices.find(item => item.size === selectedSize).price,
+                image: product.images.find(item => item.size === selectedSize).src,
                 message: selectedMessage,
             }
         });
@@ -82,7 +76,7 @@ function Product({ product }) {
                     
                     {/* product image */}
                     <div className={styles.image}>
-                        {images ? <img src={images?.find(item => item.includes(selectedSize.replace(' ', '')))} alt={product?.id} /> : <Image src={Loading} alt='product-loading' />}
+                        <img src={product?.images.find(item => item.size === selectedSize)?.src} alt={product?.id} />
                     </div>
 
                     {/* product details */}

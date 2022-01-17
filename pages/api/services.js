@@ -1,5 +1,4 @@
 import { getIngredient, getCakes, getPromos, getLocations, getContact, getCoupons } from './database';
-import { getImage, getImages } from './storage';
 
 let storedProducts;
 export const getProducts = async () => {
@@ -25,16 +24,6 @@ export const getProducts = async () => {
     return products;
 };
 
-let storedProductImages = {};
-export const getProductImagesById = async (id) => {
-    if (storedProductImages[id])
-        return storedProductImages[id];
-
-    let imageList = await getImages(`cakes/${id}`);
-    storedProductImages = imageList;
-    return imageList;
-};
-
 let storedIds;
 export const getProductIds = async () => {
     if (storedIds)
@@ -51,14 +40,14 @@ export const getProductIds = async () => {
     return ids;
 };
 
-export const getProductsByTag = async (tag) => {
-    const allProducts = await getProducts();
-    return allProducts.filter(item => item.tags.includes(tag));
-};
-
 export const getProductById = async (id) => {
     const allProducts = await getProducts();
     return allProducts.find(item => item.id === id);
+};
+
+export const getProductsByTag = async (tag) => {
+    const allProducts = await getProducts();
+    return allProducts.filter(item => item.tags.includes(tag));
 };
 
 let storedPromotions;
@@ -73,9 +62,7 @@ export const getPromotions = async (mode) => {
         if ((mode === 'active' && !item.active) || (mode === 'inactive' && item.active))
             continue;
 
-        const temp1 = await getImage(`promotions/${item.id}.jpg`);
-        const temp2 = await getImage(`promotions/${item.id}-mini.jpg`);
-        promotions.push({ ...item, banner: temp1, mini: temp2 });
+        promotions.push({ ...item });
     };
 
     storedPromotions = promotions;
