@@ -1,13 +1,15 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import { useIntl } from 'react-intl';
 import { useState, useEffect } from 'react';
 import { Check, MinusCircle, PlusCircle } from 'react-feather';
 
+import Loading from '../../public/dummy/product-loading.png';
+
 import { translate } from '../../translations/Translations';
 import styles from '../../styles/Product.module.css';
 
-import { getProductIds, getProductById } from '../api/services';
-import { generateUUID } from '../../utilities/customFunctions';
+import { getProductIds, getProductById, getProductImagesById } from '../api/services';
 import { useWindowDimensions } from '../../utilities/customHooks';
 import { useStateContext } from '../../utilities/StateContext';
 
@@ -29,6 +31,12 @@ function Product({ product }) {
     const [ selectedSize, setSelectedSize ] = useState(product.sizes[0]);
     const [ selectedQuantity, setSelectedQuantity ] = useState(1);
     const [ selectedMessage, setSelectedMessage ] = useState('');
+
+    // get images
+    useEffect(async () => {
+        const content = await getProductImagesById(product.id);
+        product.images = content;
+    }, [product]);
     
     // change button animation
     useEffect(() => {
@@ -46,7 +54,7 @@ function Product({ product }) {
         dispatch({
             type: 'ADD_CART',
             item: {
-                id: product.id + generateUUID(),
+                id: product.id,
                 name: product.name,
                 name_zh: product.name_zh,
                 size: selectedSize,
@@ -74,7 +82,7 @@ function Product({ product }) {
                     
                     {/* product image */}
                     <div className={styles.image}>
-                        <img src={product?.images.find(item => item.includes(selectedSize.replace(' ', '')))} alt={product?.id} />
+                        {product?.images ? <img src={product?.images?.find(item => item.includes(selectedSize.replace(' ', '')))} alt={product?.id} /> : <Image src={Loading} alt='product-loading' />}
                     </div>
 
                     {/* product details */}

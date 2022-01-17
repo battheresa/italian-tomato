@@ -114,7 +114,6 @@ function Locations() {
                             {locations.filter(item => item.region === 'kowloon').map(item => (
                                 <div key={item.id} onClick={() => openModal(item)}>
                                     <p>{intl.locale === 'en' ? item.name.toUpperCase() : item.name_zh}</p>
-                                    <p mode='faded'>{item.brand.toUpperCase()}</p>
                                 </div>
                             ))}
                         </div>
@@ -126,7 +125,6 @@ function Locations() {
                             {locations.filter(item => item.region === 'new-territories').map(item => (
                                 <div key={item.id} onClick={() => openModal(item)}>
                                     <p>{intl.locale === 'en' ? item.name.toUpperCase() : item.name_zh}</p>
-                                    <p mode='faded'>{item.brand.toUpperCase()}</p>
                                 </div>
                             ))}
                         </div>
@@ -138,7 +136,6 @@ function Locations() {
                             {locations.filter(item => item.region === 'hk-island').map(item => (
                                 <div key={item.id} onClick={() => openModal(item)}>
                                     <p>{intl.locale === 'en' ? item.name.toUpperCase() : item.name_zh}</p>
-                                    <p mode='faded'>{item.brand.toUpperCase()}</p>
                                 </div>
                             ))}
                         </div>

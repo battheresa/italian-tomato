@@ -35,7 +35,7 @@ function Cart({ mode, setOpen }) {
                 {/* item list */}
                 <div className={styles.list}>
                     {cart.map(item => (
-                        <div key={item.id} className={styles.item}>
+                        <div key={item.id + item.uuid} className={styles.item}>
                             <div>
                                 <h4>{intl.locale === 'en' ? item.name : item.name_zh}</h4>
                                 <h6 hoverable='false' weight='medium'>HK$ {formatCurrency(item.price * item.quantity)}</h6>

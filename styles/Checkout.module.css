@@ -121,11 +121,18 @@
 .reviewSummary > table {
     border-collapse: collapse;
     margin-right: 5vw;
-    min-width: 220px;
 }
 
 .reviewSummary > table > tbody > tr:last-child {
     border-top: 1px solid var(--grey003);
+}
+
+.reviewSummary > table > tbody > tr > th {
+    min-width: 120px;
+}
+
+.reviewSummary > table > tbody > tr > td {
+    min-width: 150px;
 }
 
 .reviewSummary > table > tbody > tr > th, .reviewSummary > table > tbody > tr > td {

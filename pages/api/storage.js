@@ -9,7 +9,7 @@ export const getImage = async (filename) => {
         return url;
     }
     catch (error) {
-        const path = ref(storage, `error/banner.jpg`);
+        const path = ref(storage, `error/banner-loading.jpg`);
         const url = await getDownloadURL(path);
 
         return url;

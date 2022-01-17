@@ -10,8 +10,6 @@ export const getProducts = async () => {
     const data = await getCakes();
 
     for (const item of data) {
-        const imageList = await getImages(`cakes/${item.id}`);
-
         let ingredientList = []; 
         if (item.ingredients) {
             for (const ingredient of item.ingredients) {
@@ -20,11 +18,21 @@ export const getProducts = async () => {
             };
         }
 
-        products.push({ ...item, images: imageList, ingredients: ingredientList });
-    };
+        products.push({ ...item, ingredients: ingredientList });
+    }
 
     storedProducts = products;
     return products;
+};
+
+let storedProductImages = {};
+export const getProductImagesById = async (id) => {
+    if (storedProductImages[id])
+        return storedProductImages[id];
+
+    let imageList = await getImages(`cakes/${id}`);
+    storedProductImages = imageList;
+    return imageList;
 };
 
 let storedIds;

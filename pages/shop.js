@@ -7,6 +7,7 @@ import styles from '../styles/Shop.module.css';
 
 import { getProducts, getProductsByTag, getPromotions } from './api/services';
 import { useWindowDimensions } from '../utilities/customHooks';
+import { useStateContext } from '../utilities/StateContext';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -17,6 +18,8 @@ import ProductCard from '../components/ProductCard';
 
 function Shop() {
     const { width, height } = useWindowDimensions();
+    const [ { allProducts }, dispatch ] = useStateContext();
+
     const [ sidebar, setSidebar ] = useState(false);
     
     const [ menu, setMenu ] = useState({ label: 'all', tag: 'all', value: 0 });

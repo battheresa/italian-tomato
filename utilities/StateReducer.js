@@ -1,3 +1,5 @@
+import { generateUUID } from './customFunctions';
+
 export const initialState = {
     cart: [],
 };
@@ -25,8 +27,8 @@ export const StateReducer = (state, action) => {
             if (indexAdd >= 0)
                 nCart[indexAdd].quantity += action.item.quantity;
             else 
-                nCart.push(action.item);
-
+                nCart.push({ ...action.item, uuid: generateUUID() });
+                
             return { ...state, cart: nCart };
 
         case 'UPDATE_CART': 
