@@ -19,9 +19,6 @@ import { Dropdown } from '../components/Utilities';
 import CheckoutModal from '../components/CheckoutModal';
 import ArrowLink from '../components/ArrowLink';
 
-// TODO: modal after place order
-// TODO other page: search bar, notification after add to cart
-
 function Checkout() {
     const intl = useIntl();
     

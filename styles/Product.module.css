@@ -76,8 +76,31 @@
 }
 
 .details > button {
+    position: relative;
+
     width: 220px;
     margin-top: 30px;
+}
+
+.details > button[status='animate'] {
+    background-color: var(--transparent);
+    color: var(--transparent);
+}
+
+.details > button > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    background-color: var(--mediumGreen);
+    color: var(--white);
+
+    width: 220px;
+    padding: 6px 10px;
+    border-radius: 50px;
+    z-index: -1;
+
+    transition: 0.4s;
 }
 
 @media screen and (max-width: 1520px) {

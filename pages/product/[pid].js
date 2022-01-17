@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useIntl } from 'react-intl';
-import { useState } from 'react';
-import { MinusCircle, PlusCircle } from 'react-feather';
+import { useState, useEffect } from 'react';
+import { Check, MinusCircle, PlusCircle } from 'react-feather';
 
 import { translate } from '../../translations/Translations';
 import styles from '../../styles/Product.module.css';
@@ -24,11 +24,24 @@ function Product({ product }) {
     const iconSize = 22;
     const { width, height } = useWindowDimensions();
     const [ sidebar, setSidebar ] = useState(false);
+    const [ animate, setAnimate ] = useState('');
 
     const [ selectedSize, setSelectedSize ] = useState(product.sizes[0]);
     const [ selectedQuantity, setSelectedQuantity ] = useState(1);
     const [ selectedMessage, setSelectedMessage ] = useState('');
     
+    // change button animation
+    useEffect(() => {
+        if (animate === 'animate') {
+            const interval = setInterval(() => {
+                setAnimate('');
+            }, 2000);
+
+            return () => clearInterval(interval);
+        }
+    }, [animate]);
+
+    // add to cart
     const addToCart = () => {
         dispatch({
             type: 'ADD_CART',
@@ -42,6 +55,8 @@ function Product({ product }) {
                 message: selectedMessage,
             }
         });
+
+        setAnimate('animate');
     };
 
     return (
@@ -115,7 +130,10 @@ function Product({ product }) {
                         </span>
 
                         {/* add to cart */}
-                        <button onClick={() => addToCart()}>{translate('add_to_cart')}</button>
+                        <button onClick={() => addToCart()} status={animate}>
+                            <span>{translate('add_to_cart')}</span>
+                            <div><Check width={iconSize} /></div>
+                        </button>
                     </div>
                 </section>
 

@@ -21,8 +21,6 @@ import { useWindowDimensions } from '../utilities/customHooks';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-// TODO: download menu
-
 function Brands() {
     const { width, height } = useWindowDimensions();
     const [ sidebar, setSidebar ] = useState(false);
