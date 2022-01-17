@@ -54,9 +54,10 @@ function Locations() {
     }, [menu]);
     
     // update menu on change dropdown (small screen)
-    useEffect(() => {
-        setMenu(dropdown.value);
-    }, [dropdown]);
+    const updateDropdown = (value) => {
+        setDropdown(value);
+        setMenu(value);
+    };
 
     // open location modal
     const openModal = (location) => {
@@ -103,7 +104,7 @@ function Locations() {
 
                 {/* dropdown */}
                 <section className={styles.logos} mode='text'>
-                    <Dropdown content={brandsDropdown} value={dropdown} placeholder='' searchable={false} onChange={setDropdown} />
+                    <Dropdown value={dropdown} content={brandsDropdown} onChange={updateDropdown} />
                 </section>
 
                 {/* locations */}

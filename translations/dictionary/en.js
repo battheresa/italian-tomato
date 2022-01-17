@@ -27,8 +27,7 @@ const common = {
     review_order: 'Review Order',
     empty_cart: 'Your cart is currently empty.',
     continue_shopping: 'Continue Shopping',
-    
-    search_bar: 'Search Products',
+    please_select: '--- Please select ---',
 };
 
 const home = {
@@ -133,7 +132,6 @@ const checkout = {
     date: 'Date',
     time: 'Time',
     store: 'Store',
-    store_placeholder: '--- Please select ---',
     
     payment: 'Payment',
     card_name: 'Cardholder Name',

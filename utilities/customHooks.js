@@ -37,33 +37,3 @@ export function useWindowOffset() {
     return offset;
 }
 
-export function useMousedownTarget(attribute) {
-    const [ target, setTarget ] = useState('');
-    const windowExist = typeof window !== 'undefined';
-
-    useEffect(() => {
-        if (windowExist) {
-            function handleMousedown(event) {
-                switch (attribute) {
-                    case 'grandparent':
-                        setTarget(event.target.parentNode.parentNode);
-                        break;
-                    case 'parent':
-                        setTarget(event.target.parentNode);
-                        break;
-                    case 'class':
-                        setTarget(event.target.className);
-                        break;
-                    default:
-                        setTarget(event.target.id);
-                        break;
-                }
-            }
-        
-            window.addEventListener('mousedown', handleMousedown);
-            return () => window.removeEventListener('mousedown', handleMousedown);
-        }
-    }, [windowExist]);
-    
-    return target;
-}

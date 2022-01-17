@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5, h6, a, p, button {
 }
 
 h1, h2, h3 { font-family: 'Playfair Display', serif; }
-h4, h5, h6, a, p, button, input { font-family: 'Roboto', sans-serif; }
+h4, h5, h6, a, p, button, input, select { font-family: 'Roboto', sans-serif; }
 
 h1 { 
 	font-size: 2.2em; 
@@ -472,103 +472,29 @@ input[type=date]::-webkit-datetime-edit-year-field:focus {
 	transform: scale(2);
 }
 
-/* ---------- dropdown ---------- */
+/* ---------- select ---------- */
 
-.dropdown {
-	cursor: pointer;
-	position: relative;
-	margin: 5px 10px;
-	width: 100%;
-}
+select {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
 
-.dropdown[clickable=off], 
-.dropdown[clickable=off] > .button, 
-.dropdown[clickable=off] > .button > input {
-	cursor: not-allowed;
-	opacity: 0.9;
-}
-
-.dropdown[clickable=off] > .button > span,
-.dropdown[clickable=off] > .button > input::placeholder {
-	color: var(--mediumGreen);
-}
-
-.dropdown > .button {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-
-	margin-bottom: 5px;
-	padding-right: 10px;
-	border-radius: 50px;
-	background-color: var(--lightGreen);
-}
-
-.dropdown > .button > input {
-	cursor: pointer;
-	padding: 8px 12px;
-
+	outline: none;
 	border: none;
-	border-radius: 50px;
-	background-color: var(--transparent);
-}
+	border-bottom: 0.1em solid var(--black);
+	border-radius: 0;
 
-.dropdown > .button > span {
-	margin-top: 8px;
-}
-
-.dropdown > .option {
-	position: absolute;
-	left: 0;
-
-	opacity: 1;
-	z-index: 1;
+	font-size: 1em;
+	font-weight: 400;
+	color: var(--black);
 
 	width: 100%;
-	overflow: hidden;
+	padding: 12px;
 
-	padding: 8px 0;
-	border-radius: 15px;
-	background-color: var(--lightGreen);
-	transition: 0.2s;
-}
-
-.dropdown > .option[status=close] {
-	opacity: 0;
-	transform: scale(0) translateY(-100%);
-	transform-origin: top center;
-}
-
-.dropdown > .option > p {
-	margin: 0;
-	padding: 8px 12px;
-}
-
-.dropdown > .option > p:hover {
-	background-color: rgba(158, 143, 102, 0.2);
-}
-
-.dropdown[mode=disguise] > .button {
 	background-color: var(--translucent001);
-
-	margin: 2px;
-	padding: 8px 15px 4px;
-
-	border-radius: 0;
-	border-bottom: 0.1em solid var(--black);
-}
-
-.dropdown[mode=disguise] > .option {
-	background-color: #E4E3DF;
-}
-
-.dropdown[mode=disguise] {
-	margin: 0;
-}
-
-.dropdown[mode=disguise] > .button {
-	padding: 5px 10px;
+	background-image: url('../public/chevron-down.svg');
+	background-position: 98% 55%;
+    background-repeat: no-repeat;
 }
 
 /* ---------- others ---------- */

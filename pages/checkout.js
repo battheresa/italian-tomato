@@ -218,12 +218,7 @@ function Checkout() {
                         </div>
                         <div>
                             <h4>{translate('contact').toUpperCase()}:</h4>
-                            <input 
-                                type='text' 
-                                value={contact} 
-                                placeholder={translate('contact_placeholder')} 
-                                onChange={(e) => setContact(formatPhone(contact, e.target.value))} 
-                            />
+                            <input type='text' value={contact} placeholder={translate('contact_placeholder')} onChange={(e) => setContact(formatPhone(contact, e.target.value))} />
                         </div>
                         <div>
                             <h4>{translate('email').toUpperCase()}:</h4>
@@ -231,15 +226,7 @@ function Checkout() {
                         </div>
                         <div>
                             <h4>{translate('store').toUpperCase()}:</h4>
-                            <Dropdown 
-                                content={intl.locale === 'en' ? locationList.en : locationList.zh} 
-                                value={location} 
-                                placeholder={translate('store_placeholder')} 
-                                searchable={true} 
-                                needTranslate={false} 
-                                mode='disguise' 
-                                onChange={setLocation} 
-                            />
+                            <Dropdown value={location} content={intl.locale === 'en' ? locationList.en : locationList.zh} onChange={setLocation} />
                         </div>
                         <div>
                             <h4>{translate('date').toUpperCase()}:</h4>

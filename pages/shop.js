@@ -18,29 +18,27 @@ import { Checkbox, Dropdown } from '../components/Utilities';
 import PromoCarousel from '../components/PromoCarousel';
 import ProductCard from '../components/ProductCard';
 
+const menuList = [ 
+    { label: 'all', tag: 'all', value: 0 },
+    { label: 'cream_cake', tag: 'cream-cake', value: 1 },
+    { label: 'cheese_cake', tag: 'cheese-cake', value: 2 },
+    { label: 'chocolate_cake', tag: 'chocolate-cake', value: 3 },
+    { label: 'mousse', tag: 'mousse', value: 4 },
+    { label: 'tart', tag: 'tart', value: 5 },
+];
+
 function Shop() {
     const { width, height } = useWindowDimensions();
-    const [ { allProducts }, dispatch ] = useStateContext();
-
     const [ sidebar, setSidebar ] = useState(false);
-    
+
     const [ menu, setMenu ] = useState({ label: 'all', tag: 'all', value: 0 });
-    const menuList = [ 
-        { label: 'all', tag: 'all', value: 0 },
-        { label: 'cream_cake', tag: 'cream-cake', value: 1 },
-        { label: 'cheese_cake', tag: 'cheese-cake', value: 2 },
-        { label: 'chocolate_cake', tag: 'chocolate-cake', value: 3 },
-        { label: 'mousse', tag: 'mousse', value: 4 },
-        { label: 'tart', tag: 'tart', value: 5 },
-    ];
+    const [ promotions, setPromotions ] = useState(undefined);
+    const [ products, setProducts ] = useState(new Array(8).fill(undefined)); 
 
     const [ checklist1, setChecklist1 ] = useState(false);
     const [ checklist2, setChecklist2 ] = useState(false);
     const [ checklist3, setChecklist3 ] = useState(false);
     const [ checklist4, setChecklist4 ] = useState(false);
-
-    const [ promotions, setPromotions ] = useState(undefined);
-    const [ products, setProducts ] = useState(new Array(12).fill(undefined)); 
 
     // get initial product list
     useEffect(() => {
@@ -82,6 +80,11 @@ function Shop() {
         setChecklist4(false);
     };
 
+    const updateDropdown = (value) => {
+        setMenu(menuList[value]);
+        console.log(value)
+    };
+
     return (
         <div style={{ height: `${height}px`, width: '100vw', overflow: sidebar ? 'hidden' : 'visible' }}>
             <Head>
@@ -111,7 +114,7 @@ function Shop() {
                         <h5 onClick={() => setMenu(menuList[5])} status={menu.value === 5 ? 'active' : ''}>{translate('tart')}</h5>
                     </div>
                     <div className={styles.cakeType} mode='smallScreen'>
-                        <Dropdown content={menuList} value={menu} searchable={false} needTranslate={true} onChange={setMenu} />
+                        <Dropdown value={menu.value} content={menuList} needTranslate={true} onChange={updateDropdown} />
                     </div>
 
                     {/* cake size */}

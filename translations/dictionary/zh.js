@@ -27,8 +27,7 @@ const common = {
     review_order: '查看訂單',
     empty_cart: '您的購物車目前是空的。',
     continue_shopping: '繼續購物',
-    
-    search_bar: '搜索產品',
+    please_select: '--- 請選擇 ---',
 };
 
 const home = {
@@ -132,7 +131,6 @@ const checkout = {
     date: '日期',
     time: '時間',
     store: '店面位置',
-    store_placeholder: '--- 請選擇 ---',
     
     payment: '支付',
     card_name: '持卡人姓名',
