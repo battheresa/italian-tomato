@@ -71,3 +71,19 @@ export const getContact = async () => {
     storedContacts = contacts;
     return contacts;
 };
+
+let storeCoupons;
+export const getCoupons = async () => {
+    if (storeCoupons)
+        return storeCoupons;
+
+    let coupons = [];
+    const response = await getDocs(collection(firestore, 'coupons'));
+    
+    response.forEach((item) => {
+        coupons.push({ id: item.id, ...item.data() });
+    });
+
+    storeCoupons = coupons;
+    return coupons;
+};

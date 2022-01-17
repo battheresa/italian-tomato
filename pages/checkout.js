@@ -6,7 +6,7 @@ import { X, MinusCircle, PlusCircle } from 'react-feather';
 import { translate } from '../translations/Translations';
 import styles from '../styles/Checkout.module.css';
 
-import { getPickupLocations } from './api/services';
+import { getPickupLocations, getDiscountCodes } from './api/services';
 import { useWindowDimensions } from '../utilities/customHooks';
 import { generateOrderNumber, formatCreditCard, formatCurrency, formatPhone } from '../utilities/customFunctions';
 import { useStateContext } from '../utilities/StateContext';
@@ -38,9 +38,13 @@ function Checkout() {
     const [ cardNumber, setCardNumber ] = useState('');
     const [ cardExp, setCardExp ] = useState('');
 
+    const [ discountCodes, setDiscountCodes ] = useState([]);
+    const [ discount, setDiscount ] = useState(0);
+
     useEffect(() => {
         setOrderNumber(generateOrderNumber());
         getPickupLocations('italian-tomato').then(content => setLocationList(content));
+        getDiscountCodes().then(content => setDiscountCodes(content));
     }, []);
 
     // change quantity by inputs (input onfocus)
@@ -94,6 +98,16 @@ function Checkout() {
     const placeOrder = () => {
         setOpen(true);
         dispatch({ type: 'EMPTY_CART' });
+    };
+
+    // check coupon code
+    const checkDiscount = (code) => {
+        const temp = discountCodes.find(item => item.code.toUpperCase() === code.toUpperCase());
+
+        if (temp)
+            setDiscount(temp.unit === '%' ? getSubtotal(cart) * temp.value / 100 : temp.value);
+        else 
+            setDiscount(0);
     };
 
     return (
@@ -164,7 +178,7 @@ function Checkout() {
                             </div>
                             <div>
                                 <h4>{translate('coupon')}:</h4>
-                                <input type='text' placeholder={translate('coupon_placeholder')} />
+                                <input type='text' placeholder={translate('coupon_placeholder')} onBlur={(e) => checkDiscount(e.target.value)} />
                             </div>
                         </div>
                         <table>
@@ -175,11 +189,11 @@ function Checkout() {
                                 </tr>
                                 <tr>
                                     <th>{translate('discount')}:</th>
-                                    <td><p>HK$ {formatCurrency(getSubtotal(cart))}</p></td>
+                                    <td><p>HK$ {formatCurrency(discount)}</p></td>
                                 </tr>
                                 <tr>
                                     <th>{translate('total')}:</th>
-                                    <td><p>HK$ {formatCurrency(getSubtotal(cart))}</p></td>
+                                    <td><p>HK$ {formatCurrency(getSubtotal(cart) - discount)}</p></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -1,4 +1,4 @@
-import { getIngredient, getCakes, getPromos, getLocations, getContact } from './database';
+import { getIngredient, getCakes, getPromos, getLocations, getContact, getCoupons } from './database';
 import { getImage, getImages } from './storage';
 
 let storedProducts;
@@ -108,4 +108,8 @@ export const getPickupLocations = async (brand) => {
 
 export const getContactInfo = async () => {
     return await getContact();
+};
+
+export const getDiscountCodes = async () => {
+    return await getCoupons();
 };

@@ -116,6 +116,7 @@
 
 .reviewSummary > div > div > input {
     width: 100%;
+    text-transform: uppercase;
 }
 
 .reviewSummary > table {
